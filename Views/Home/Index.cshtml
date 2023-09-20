@@ -65,24 +65,33 @@
 					<div class="col-md-4 col-md-pull-7">
 						<div class="booking-form">
 							<form asp-controller="Home" asp-action="Index">
-								<div class="form-group">
-									<span class="form-label">Diet Descript</span>
-									<input class="form-control" type="text" placeholder="Enter a destination or hotel name">
+								
+								<div class="col-sm-6">
+									<div class="form-group">
+										<span class="form-label">Age</span>
+										<input class="form-control" type="number" asp-for="Age" placeholder="Enter your age" required>
+										
+									</div>
 								</div>
-								@*<div class="row">
-									<div class="col-sm-6">
-										<div class="form-group">
-											<span class="form-label">start date</span>
-											<input class="form-control" type="date" required>
-										</div>
+
+								<div class="col-sm-6">
+									<div class="form-group">
+										<span class="form-label">Gender</span>
+
+										<select class="form-control" asp-for="Gender" required>
+											<option value="">Select Gender</option> <!-- Default option -->
+											<option value="Male">Male</option>
+											<option value="Female">Female</option>
+											<option value="Others">Others</option>
+											@*@foreach (var item in Model.Locations)
+											{
+											<option value="@item.Value">@item.Text</option>
+											}*@
+										</select>
+
+										<span class="select-arrow"></span>
 									</div>
-									<div class="col-sm-6">
-										<div class="form-group">
-											<span class="form-label">end date</span>
-											<input class="form-control" type="date" required>
-										</div>
-									</div>
-								</div>*@
+								</div>
 								<div class="row">
 									<div class="col-sm-4">
 										<div class="form-group">

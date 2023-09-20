@@ -17,8 +17,9 @@ namespace DataMashUp.Controllers
 		private readonly ILogger<HomeController> _logger;
 
 		private readonly IWebHostEnvironment _hostingEnvironment;
-		private readonly IRepository _repository;
 
+		private readonly string _Prescription;
+		private readonly IRepository _repository;
 
 		public HomeController(ILogger<HomeController> logger, IWebHostEnvironment hostingEnvironment, IRepository repository)
 		{
@@ -33,7 +34,7 @@ namespace DataMashUp.Controllers
 			var viewModel = new IndexDTO
 			{
 				Locations = await GetLOcation(),
-				Articles = news.Articles
+				Articles = news.Articles.Take(5).ToList()
 
 			};
 
@@ -48,12 +49,19 @@ namespace DataMashUp.Controllers
 				viewModel.Locations = await GetLOcation();
 				return View(viewModel);
 			}
-
-			var news = await _repository.GetPrescription(viewModel.HealthCondition);
-
 			viewModel.Locations = await GetLOcation();
+			var param = new { healthCondition = viewModel.HealthCondition, age = viewModel.Age, gender = viewModel.Gender };
 
-			return View(viewModel);
+			return RedirectToAction(nameof(Prescription), param);
+		}
+
+		public async Task<IActionResult> Prescription(string healthCondition, int age, string gender )
+		{
+
+			var prescription = await _repository.GetPrescription(healthCondition, age.ToString());
+			prescription.Age = age;
+			prescription.Gender = gender;
+			return View(prescription);
 		}
 
 

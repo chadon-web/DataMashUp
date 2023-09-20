@@ -1,0 +1,139 @@
+﻿@model DataMashUp.DTO.PrescriptionDto
+@{
+	ViewData["Title"] = "Prescription";
+	Layout = /*"~/Views/Shared/_Layout.cshtml";*/null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Diet Prescription</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 20px;
+			background-color: #f2f2f2;
+		}
+
+		.prescription {
+			max-width: 600px;
+			margin: 0 auto;
+			border: 2px solid #333;
+			padding: 20px;
+			background-color: #fff;
+		}
+
+		h1 {
+			text-align: center;
+			color: #007bff;
+		}
+
+		.patient-info {
+			margin-bottom: 20px;
+			padding: 10px;
+			background-color: #f7f7f7;
+		}
+
+		.diet-instructions {
+			margin-bottom: 20px;
+			padding: 10px;
+			background-color: #f7f7f7;
+		}
+
+		.eat-section, .avoid-section {
+			margin-bottom: 20px;
+			padding: 10px;
+			background-color: #f7f7f7;
+		}
+
+		h3 {
+			color: #007bff;
+		}
+
+		ul {
+			list-style-type: disc;
+			margin-left: 20px;
+			color: #333;
+		}
+
+		.footer {
+			text-align: center;
+			margin-top: 20px;
+		}
+
+		button {
+			display: block;
+			margin: 20px auto;
+			padding: 10px 20px;
+			background-color: #007bff;
+			color: #fff;
+			border: none;
+			cursor: pointer;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="prescription">
+		<h1>Diet Prescription</h1>
+		<div class="patient-info">
+			<p><strong>Patient Name:</strong> John Doe</p>
+			<p><strong>Age:</strong> @Model.Age</p>
+			<p><strong>Gender:</strong>@Model.Gender</p>
+		</div>
+		<div class="diet-instructions">
+			<h2>Dietary Instructions:</h2>
+			<div class="eat-section">
+				<h3>What to Eat:</h3>
+				<ul>
+					@foreach (var item in Model.Consumes)
+					{
+						<li>@item.DisplayAs</li>
+					}
+
+				</ul>
+			</div>
+			<div class="avoid-section">
+				<h3>What to Avoid:</h3>
+				<ul>
+					@foreach (var item in Model.Avoids)
+					{
+						<li>@item.DisplayAs</li>
+					}
+
+				</ul>
+			</div>
+		</div>
+		<div class="footer">
+			<p>Dr. Jane Smith, MD</p>
+			<p id="date">Date: </p>
+		</div>
+		<button id="printButton">Print</button>
+	</div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+	<script>
+		// Get the current date and time
+		const currentDate = new Date();
+		const formattedDate = currentDate.toLocaleString();
+
+		// Update the date element with the current date and time
+		document.getElementById('date').textContent = `Date: ${formattedDate}`;
+
+		// Function to generate and save the PDF
+		document.getElementById('printButton').addEventListener('click', function() {
+						window.print();
+			//const pdf = new jsPDF();
+			//pdf.html(document.querySelector('.prescription'), {
+			//    callback: function (pdf) {
+			//        pdf.save('diet_prescription.pdf');
+			//    },
+			//    x: 15,
+			//    y: 15,
+			//});
+		});
+	</script>
+</body>
+</html>

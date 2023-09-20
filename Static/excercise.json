@@ -1,0 +1,125 @@
+{
+  "age_groups": [
+    {
+      "age_range": "15-19 Years",
+      "exercises": [
+        "Brisk walking or jogging for 30 minutes, 5 days a week",
+        "Bodyweight exercises (push-ups, squats) for strength, 3 sets of 10-12 reps",
+        "Cycling or rollerblading for cardiovascular health, 3 days a week",
+        "Yoga for flexibility and relaxation, 2 days a week",
+        "Swimming for full-body workout, 2 days a week"
+      ],
+      "recommendation": "Encourage participation in school sports or group activities for motivation."
+    },
+    {
+      "age_range": "20-24 Years",
+      "exercises": [
+        "Running or sprinting intervals, 30 minutes, 3 days a week",
+        "Weightlifting or resistance training for muscle development, 3 sets of 10-12 reps",
+        "High-intensity interval training (HIIT) for calorie burning, 2 days a week",
+        "Pilates for core strength and posture, 2 days a week",
+        "Rock climbing or hiking for adventure and fitness, 2 days a week"
+      ],
+      "recommendation": "Consider joining a gym or fitness class for access to a variety of workouts."
+    },
+    {
+      "age_range": "25-29 Years",
+      "exercises": [
+        "Aerobic dance classes for cardiovascular fitness, 45 minutes, 3 days a week",
+        "Strength training using free weights or machines, 3 sets of 10-12 reps",
+        "Boxing or kickboxing for stress relief and coordination, 2 days a week",
+        "Yoga or Pilates for flexibility and mindfulness, 2 days a week",
+        "Trail running or mountain biking for outdoor enthusiasts, 2 days a week"
+      ],
+      "recommendation": "Seek guidance from a personal trainer to set and achieve fitness goals."
+    },
+    {
+      "age_range": "30-34 Years",
+      "exercises": [
+        "Circuit training for overall fitness and calorie burn, 45 minutes, 3 days a week",
+        "Functional strength training (kettlebells, TRX) for muscle balance, 3 sets of 10-12 reps",
+        "Swimming or water aerobics for joint health, 2 days a week",
+        "Martial arts for discipline and self-defense, 2 days a week",
+        "Group cycling for camaraderie and endurance, 2 days a week"
+      ],
+      "recommendation": "Join a fitness community or social sports group to stay motivated."
+    },
+    {
+      "age_range": "35-39 Years",
+      "exercises": [
+        "CrossFit or high-intensity workouts for overall fitness, 45 minutes, 3 days a week",
+        "Barbell or strength training for muscle development, 3 sets of 10-12 reps",
+        "Outdoor boot camp classes for variety and challenge, 2 days a week",
+        "Yoga or meditation for stress management, 2 days a week",
+        "Climbing or bouldering for strength and mental focus, 2 days a week"
+      ],
+      "recommendation": "Consider incorporating family activities or outdoor workouts for added enjoyment."
+    },
+    {
+      "age_range": "45-49 Years",
+      "exercises": [
+        "Brisk walking for 30 minutes, 5 days a week",
+        "Bodyweight squats, 3 sets of 10-12 reps",
+        "Stationary cycling, 20-30 minutes, 3 days a week",
+        "Yoga for flexibility and balance, 2 days a week",
+        "Swimming for cardiovascular health, 2 days a week"
+      ],
+      "recommendation": "Consult with a fitness professional to develop a well-rounded fitness program."
+    },
+    {
+      "age_range": "50-54 Years",
+      "exercises": [
+        "Regular hiking or trail walking for 45 minutes, 3 days a week",
+        "Resistance band exercises for strength, 3 sets of 10-12 reps",
+        "Water aerobics for joint health, 2 days a week",
+        "Tai chi for balance and stress reduction, 2 days a week",
+        "Pilates for core strength and flexibility, 2 days a week"
+      ],
+      "recommendation": "Consider participating in group fitness classes designed for older adults."
+    },
+    {
+      "age_range": "55-59 Years",
+      "exercises": [
+        "Low-impact aerobics class, 45 minutes, 3 days a week",
+        "Light dumbbell exercises for strength, 3 sets of 10-12 reps",
+        "Gentle yoga for flexibility and relaxation, 2 days a week",
+        "Indoor rowing for full-body workout, 2 days a week",
+        "Dancing (ballroom or line dancing) for fun and cardio, 2 days a week"
+      ],
+      "recommendation": "Monitor exercise intensity and adjust as needed to accommodate age-related changes."
+    },
+    {
+      "age_range": "60-64 Years",
+      "exercises": [
+        "Gentle cycling on flat terrain for 30-45 minutes, 3 days a week",
+        "Resistance band exercises for muscle tone, 3 sets of 10-12 reps",
+        "Tai chi for balance and relaxation, 2 days a week",
+        "Pilates for core strength and posture, 2 days a week",
+        "Walking in a park or nature setting for mental and physical well-being, 2 days a week"
+      ],
+      "recommendation": "Consult with a healthcare provider for exercise recommendations tailored to any medical conditions."
+    },
+    {
+      "age_range": "65-69 Years",
+      "exercises": [
+        "Water aerobics for joint-friendly cardio, 45 minutes, 3 days a week",
+        "Light weightlifting with supervision, 3 sets of 10-12 reps",
+        "Chair yoga for flexibility and relaxation, 2 days a week",
+        "Outdoor gardening for physical activity, 2 days a week",
+        "Social dance classes for mental and social engagement, 2 days a week"
+      ],
+      "recommendation": "Participate in activities that promote social engagement for mental and emotional well-being."
+    },
+    {
+      "age_range": "70-74 Years",
+      "exercises": [
+        "Senior fitness classes for well-rounded exercise, 45 minutes, 3 days a week",
+        "Light resistance band exercises for muscle maintenance, 3 sets of 10-12 reps",
+        "Seated stretching and flexibility exercises, 2 days a week",
+        "Gentle swimming or water exercises, 2 days a week",
+        "Nature walks or leisurely hikes for enjoyment and fitness, 2 days a week"
+      ],
+      "recommendation": "Stay hydrated and adapt exercise routines as needed to suit personal comfort levels."
+    },
+    {
+      "
