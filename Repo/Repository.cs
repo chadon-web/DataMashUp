@@ -109,7 +109,7 @@ namespace DataMashUp.Repo
 
 		private ExerciseRecommendation GetExcercisePrescriptionByAge(string age)
 		{
-			var PhoneAbsolutePath = Path.Combine(_hostingEnvironment.ContentRootPath, "Static\\excercise.json");
+			var PhoneAbsolutePath = Path.Combine(_hostingEnvironment.ContentRootPath, "Static/excercise.json");
 			var pres = AppUtility.ReadJosnAsync<ExerciseRecommendations>(PhoneAbsolutePath).Result;
 			var ageExcercise = pres.AgeGroups.FirstOrDefault(x => x.Exercises.Contains(age)) ?? new ExerciseRecommendation();
 			var data = AppUtility.PickRandomItems(ageExcercise.Exercises, 3);
