@@ -6,7 +6,7 @@
 		public List<FoodItemList> Avoids { get; set; } = new List<FoodItemList>();
 		public int Age { get; set; }
 		public string Gender { get; set; } = string.Empty;
-		public ExerciseRecommendation ExerciseRecommendation { get; set; } = new ExerciseRecommendation();
+		public List <string> ExerciseRecommendation { get; set; } = new List<string>();
 
 	}
 }

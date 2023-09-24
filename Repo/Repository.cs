@@ -89,7 +89,6 @@ namespace DataMashUp.Repo
 			var excerciseTask =  Task.Run(()=> GetExcercisePrescriptionByAge(age));
 			// Wait for both tasks to complete
 			await Task.WhenAll(consumeTask, avoidTask, excerciseTask);
-
 			var consumes = consumeTask.Result;
 			var avoids = avoidTask.Result;
 			var excercise = excerciseTask.Result;
@@ -107,20 +106,13 @@ namespace DataMashUp.Repo
 			return result;
 		}
 
-		private ExerciseRecommendation GetExcercisePrescriptionByAge(string age)
+		private List<string> GetExcercisePrescriptionByAge(string age)
 		{
 			var PhoneAbsolutePath = Path.Combine(_hostingEnvironment.ContentRootPath, "Static/excercise.json");
 			var pres = AppUtility.ReadJosnAsync<ExerciseRecommendations>(PhoneAbsolutePath).Result;
-			var ageExcercise = pres.AgeGroups.FirstOrDefault(x => x.Exercises.Contains(age)) ?? new ExerciseRecommendation();
-			var data = AppUtility.PickRandomItems(ageExcercise.Exercises, 3);
+			var ageExcercise = AppUtility.GetExcercise(pres, age);
 
-			var result = new ExerciseRecommendation
-			{
-				AgeRange = ageExcercise.AgeRange,
-				Exercises = data,
-				Recommendation = ageExcercise.Recommendation
-			};
-			return result;
+			return ageExcercise;
 		}
 		private async Task<List<FoodItemList>> GetConsumeOrAvoid(string healthConditionId, string consumeOrAvoid )
 		{

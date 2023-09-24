@@ -55,11 +55,12 @@
 							<p class="mover">
 								@foreach (var item in Model.Articles)
 								{
-								<p class="mover">
+									<p class="mover">
 									<a href="@item.Url"><span style="color:aliceblue">@item.Title</span></a>
 									</p>
 								}
 							</p>
+
 						</div>
 					</div>
 					<div class="col-md-4 col-md-pull-7">
@@ -69,7 +70,7 @@
 								<div class="col-sm-6">
 									<div class="form-group">
 										<span class="form-label">Age</span>
-										<input class="form-control" type="number" asp-for="Age" placeholder="Enter your age" required>
+										<input class="form-control" min="1" max="200" type="number" asp-for="Age" placeholder="Enter your age" required>
 										
 									</div>
 								</div>

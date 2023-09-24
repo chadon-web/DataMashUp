@@ -1,7 +1,7 @@
 {
   "age_groups": [
     {
-      "age_range": "15-19 Years",
+      "age_range": "15-19",
       "exercises": [
         "Brisk walking or jogging for 30 minutes, 5 days a week",
         "Bodyweight exercises (push-ups, squats) for strength, 3 sets of 10-12 reps",
@@ -12,7 +12,7 @@
       "recommendation": "Encourage participation in school sports or group activities for motivation."
     },
     {
-      "age_range": "20-24 Years",
+      "age_range": "20-24",
       "exercises": [
         "Running or sprinting intervals, 30 minutes, 3 days a week",
         "Weightlifting or resistance training for muscle development, 3 sets of 10-12 reps",
@@ -23,7 +23,7 @@
       "recommendation": "Consider joining a gym or fitness class for access to a variety of workouts."
     },
     {
-      "age_range": "25-29 Years",
+      "age_range": "25-29",
       "exercises": [
         "Aerobic dance classes for cardiovascular fitness, 45 minutes, 3 days a week",
         "Strength training using free weights or machines, 3 sets of 10-12 reps",
@@ -34,7 +34,7 @@
       "recommendation": "Seek guidance from a personal trainer to set and achieve fitness goals."
     },
     {
-      "age_range": "30-34 Years",
+      "age_range": "30-34",
       "exercises": [
         "Circuit training for overall fitness and calorie burn, 45 minutes, 3 days a week",
         "Functional strength training (kettlebells, TRX) for muscle balance, 3 sets of 10-12 reps",
@@ -45,7 +45,7 @@
       "recommendation": "Join a fitness community or social sports group to stay motivated."
     },
     {
-      "age_range": "35-39 Years",
+      "age_range": "35-39",
       "exercises": [
         "CrossFit or high-intensity workouts for overall fitness, 45 minutes, 3 days a week",
         "Barbell or strength training for muscle development, 3 sets of 10-12 reps",
@@ -56,7 +56,7 @@
       "recommendation": "Consider incorporating family activities or outdoor workouts for added enjoyment."
     },
     {
-      "age_range": "45-49 Years",
+      "age_range": "45-49",
       "exercises": [
         "Brisk walking for 30 minutes, 5 days a week",
         "Bodyweight squats, 3 sets of 10-12 reps",
@@ -67,7 +67,7 @@
       "recommendation": "Consult with a fitness professional to develop a well-rounded fitness program."
     },
     {
-      "age_range": "50-54 Years",
+      "age_range": "50-54",
       "exercises": [
         "Regular hiking or trail walking for 45 minutes, 3 days a week",
         "Resistance band exercises for strength, 3 sets of 10-12 reps",
@@ -78,7 +78,7 @@
       "recommendation": "Consider participating in group fitness classes designed for older adults."
     },
     {
-      "age_range": "55-59 Years",
+      "age_range": "55-59",
       "exercises": [
         "Low-impact aerobics class, 45 minutes, 3 days a week",
         "Light dumbbell exercises for strength, 3 sets of 10-12 reps",
@@ -89,7 +89,7 @@
       "recommendation": "Monitor exercise intensity and adjust as needed to accommodate age-related changes."
     },
     {
-      "age_range": "60-64 Years",
+      "age_range": "60-64",
       "exercises": [
         "Gentle cycling on flat terrain for 30-45 minutes, 3 days a week",
         "Resistance band exercises for muscle tone, 3 sets of 10-12 reps",
@@ -100,7 +100,7 @@
       "recommendation": "Consult with a healthcare provider for exercise recommendations tailored to any medical conditions."
     },
     {
-      "age_range": "65-69 Years",
+      "age_range": "65-69",
       "exercises": [
         "Water aerobics for joint-friendly cardio, 45 minutes, 3 days a week",
         "Light weightlifting with supervision, 3 sets of 10-12 reps",
@@ -111,7 +111,7 @@
       "recommendation": "Participate in activities that promote social engagement for mental and emotional well-being."
     },
     {
-      "age_range": "70-74 Years",
+      "age_range": "70-74",
       "exercises": [
         "Senior fitness classes for well-rounded exercise, 45 minutes, 3 days a week",
         "Light resistance band exercises for muscle maintenance, 3 sets of 10-12 reps",
@@ -122,4 +122,26 @@
       "recommendation": "Stay hydrated and adapt exercise routines as needed to suit personal comfort levels."
     },
     {
-      "
+      "age_range": "75-79",
+      "exercises": [
+        "Senior yoga or gentle stretching classes, 45 minutes, 3 days a week",
+        "Bodyweight exercises (e.g., modified push-ups) for strength, 3 sets of 10-12 reps",
+        "Seated balance and stability exercises, 2 days a week",
+        "Leisurely swimming for low-impact cardio, 2 days a week",
+        "Group walking for social interaction and fitness, 2 days a week"
+      ],
+      "recommendation": "Regularly monitor progress and adjust exercise routines as necessary."
+    },
+    {
+      "age_range": "80-100",
+      "exercises": [
+        "Chair yoga for flexibility and relaxation, 30 minutes, 3 days a week",
+        "Light resistance band exercises for muscle maintenance, 3 sets of 10-12 reps",
+        "Tai chi for balance and joint health, 2 days a week",
+        "Gentle swimming or water aerobics, 2 days a week",
+        "Group dancing or line dancing for fun and social engagement, 2 days a week"
+      ],
+      "recommendation": "Participate in exercises that promote social interaction and enjoy a well-balanced diet for overall health."
+    }
+  ]
+}

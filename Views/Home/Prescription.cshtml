@@ -105,9 +105,18 @@
 
 				</ul>
 			</div>
+			<div class="avoid-section">
+				<h3>Excercise Prescription:</h3>
+				<ul>
+					@foreach (var item in Model.ExerciseRecommendation)
+					{
+						<li>@item</li>
+					}
+
+				</ul>
+			</div>
 		</div>
 		<div class="footer">
-			<p>Dr. Jane Smith, MD</p>
 			<p id="date">Date: </p>
 		</div>
 		<button id="printButton">Print</button>
@@ -125,14 +134,7 @@
 		// Function to generate and save the PDF
 		document.getElementById('printButton').addEventListener('click', function() {
 						window.print();
-			//const pdf = new jsPDF();
-			//pdf.html(document.querySelector('.prescription'), {
-			//    callback: function (pdf) {
-			//        pdf.save('diet_prescription.pdf');
-			//    },
-			//    x: 15,
-			//    y: 15,
-			//});
+
 		});
 	</script>
 </body>

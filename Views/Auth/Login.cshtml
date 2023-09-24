@@ -1,0 +1,63 @@
+﻿@model DataMashUp.DTO.LoginDto
+@{
+	var returnUrl = ViewData["returnUrl"];
+
+	Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+	<title>Booking Form HTML Template</title>
+
+	<!-- Google font -->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+	<!-- Bootstrap -->
+	<link type="text/css" rel="stylesheet" href="~/css/login.css" />
+
+</head>
+
+<body>
+	<div class="login-wrap">
+	<div class="login-html">
+		<input id="tab-1" type="radio" name="tab" class="sign-in" ><label for="tab-1" class="tab">Sign In</label>
+
+			<form class="login-form" asp-action="Login" asp-controller="Auth" asp-route-returnUrl="@returnUrl">
+			<div class="sign-in-htms">
+				<div class="group">
+					<label for="user" class="label">Email</label>
+						<input asp-for="Email" id="user" asp type="email" class="input" required>
+						<span class="text-danger" asp-validation-for="Email"></span>
+				</div>
+				<div class="group">
+						<label asp-for="Password" class="label">Password</label>
+						<input asp-for="Password" id="pass" type="password" class="input" data-type="password" required>
+						<span class="text-danger" asp-validation-for="Password"></span>
+				</div>
+				<div class="group">
+					<input id="check" type="checkbox" class="check" checked>
+						<label asp-for="RememberMe" for="check"><span class="icon"></span> Keep me Signed in</label>
+						
+				</div>
+				<div class="group">
+					<input type="submit"  class="button" value="Sign In">
+				</div>
+			@*	<div class="hr"></div>
+				<div class="foot-lnk">
+					<a href="#forgot">Forgot Password?</a>
+				</div>*@
+			</div>
+
+		</form>
+	</div>
+</div>
+
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>

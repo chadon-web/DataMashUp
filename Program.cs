@@ -14,6 +14,8 @@ builder.Services.AddScoped<IRepository, Repository>();
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 	options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
+
+
 builder.Services.AddIdentity<IdentityUser<long>, IdentityRole<long>>(options =>
 {
 	options.SignIn.RequireConfirmedAccount = false;
