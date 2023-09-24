@@ -1,28 +1,38 @@
 ﻿using DataMashUp.Data;
 using DataMashUp.DTO;
 using DataMashUp.Migrations;
+using DataMashUp.Utilities;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using NuGet.Common;
 using System.Transactions;
 
 namespace DataMashUp.Controllers
 {
 	[AllowAnonymous]
-	public class AuthController : Controller
+
+	public class AccountController : Controller
 	{
 		private readonly UserManager<IdentityUser<long>> _userManager;
 		private readonly SignInManager<IdentityUser<long>> _signInManager;
 		private readonly ApplicationDbContext _applicationDbContext;
-
-		public AuthController(UserManager<IdentityUser<long>> userManager,
+		private readonly IHttpContextAccessor contextAccessor;
+		private readonly Microsoft.AspNetCore.Hosting.IHostingEnvironment _hostingEnvironment;
+		public string rootPath { get; set; }
+		public AccountController(UserManager<IdentityUser<long>> userManager,
 			SignInManager<IdentityUser<long>> signInManager,
-			ApplicationDbContext applicationDbContext)
+			ApplicationDbContext applicationDbContext,
+			IHttpContextAccessor contextAccessor,
+			Microsoft.AspNetCore.Hosting.IHostingEnvironment hostingEnvironment)
 		{
 			_userManager = userManager;
 			_signInManager = signInManager;
 			this._applicationDbContext = applicationDbContext;
+			this.contextAccessor = contextAccessor;
+			_hostingEnvironment = hostingEnvironment;
+			rootPath = _hostingEnvironment.ContentRootPath;
 		}
 
 		public async Task<IActionResult> Login(string returnUrl = null)
@@ -30,7 +40,6 @@ namespace DataMashUp.Controllers
 
 			returnUrl = returnUrl ?? Url.Content("~/");
 
-			returnUrl = "ifeanyi";
 			await HttpContext.SignOutAsync(IdentityConstants.ExternalScheme);
 			ViewData["returnUrl"] = returnUrl;
 
@@ -77,12 +86,34 @@ namespace DataMashUp.Controllers
 				}
 				else
 				{
-					ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+					ModelState.AddModelError("Email", "Invalid login attempt.");
 					return View();
 				}
 			}
 
 			return View();
+		}
+
+		public async Task<IActionResult> ConfirmEmail(string returnUrl = null)
+		{
+
+			returnUrl = returnUrl ?? Url.Content("~/");
+
+			await HttpContext.SignOutAsync(IdentityConstants.ExternalScheme);
+			ViewData["returnUrl"] = returnUrl;
+
+			return View();
+		}
+
+		public string GenerateEmailConfirmLink(IdentityUser<long> user)
+		{
+			var scheme = contextAccessor.HttpContext.Request.Scheme;
+			var host = contextAccessor.HttpContext.Request.Host.Value;
+			var token =  _userManager.GenerateEmailConfirmationTokenAsync(user).Result;
+			var fileurl = $"{scheme}://{host}/ConfirmEmail";
+			var baseUrl = $"{fileurl}?token={token}&email={user.Email}";
+
+			return baseUrl;
 		}
 
 		public async Task<IActionResult> Register()
@@ -110,7 +141,14 @@ namespace DataMashUp.Controllers
 					return View();
 
 				}
+				var url = GenerateEmailConfirmLink(user);
+				var emailTeplate = new EmailRequest
+				{
+					To = user.Email,
+					Body = AppUtility.FormatConfirmEmailTemplate(url, rootPath, user.UserName)
 
+				};
+				Task.Run(async () => await AppUtility.SendMail(emailTeplate));
 
 				 await _signInManager.PasswordSignInAsync(register.Email,
 				register.Password, false, lockoutOnFailure: false);

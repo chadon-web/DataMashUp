@@ -1,6 +1,7 @@
 ﻿using DataMashUp.DTO;
 using DataMashUp.Models;
 using DataMashUp.Repo;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting.Server;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -8,10 +9,12 @@ using Microsoft.Extensions.Hosting;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Diagnostics;
-
+using Twilio;
+using Twilio.Rest.Api.V2010.Account;
 
 namespace DataMashUp.Controllers
 {
+	
 	public class HomeController : Controller
 	{
 		private readonly ILogger<HomeController> _logger;
@@ -28,8 +31,22 @@ namespace DataMashUp.Controllers
 			_repository = repository;
 		}
 
+		[Authorize]
 		public async Task<IActionResult> Index()
 		{
+
+			string accountSid = "AC91a3922ce1b0014ea218ad44aea261a2";
+			string authToken = "424474290bc86eaaf273a54f5d5edb4a\r\n";
+
+			TwilioClient.Init(accountSid, authToken);
+
+			var message = MessageResource.Create(
+				body: "Testing ",
+				from: new Twilio.Types.PhoneNumber("+447723487855"),
+				to: new Twilio.Types.PhoneNumber("+447305718080")
+			);
+
+
 			var news = await _repository.GetBreakingNews();
 			var viewModel = new IndexDTO
 			{
@@ -55,6 +72,7 @@ namespace DataMashUp.Controllers
 			return RedirectToAction(nameof(Prescription), param);
 		}
 
+		[Authorize]
 		public async Task<IActionResult> Prescription(string healthCondition, int age, string gender )
 		{
 

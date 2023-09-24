@@ -5,6 +5,10 @@ using System;
 using DataMashUp.DTO;
 using System.Text;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
+using Twilio;
+using Twilio.Rest.Api.V2010.Account;
+using System.Net;
+using System.Net.Mail;
 
 namespace DataMashUp.Utilities
 {
@@ -17,6 +21,83 @@ namespace DataMashUp.Utilities
 
 		}
 
+
+		public static async Task<bool> SendMail(EmailRequest emailRequest)
+		{
+			try
+			{
+				//var key1 = Environment.GetEnvironmentVariable("NAME_OF_THE_ENVIRONMENT_VARIABLE_FOR_YOUR_SENDGRID_KEY");
+				var sender = Base64Decode("chidionoh2@gmail.com");
+				var key = Base64Decode("U0cuaUF5OUE0QzNST09ob25UdXdMaHFLUS4wUjlENHVuUHRtbjI5Qkp0bTlENFp4M1FNMzcwSHBuS0JZdmJ4bXJvVnJV\r\n");
+				using var message = new MailMessage();
+				message.From = new MailAddress(sender, "chidionoh2@gmail.com");
+
+				message.IsBodyHtml = true;
+				message.To.Add(new MailAddress("", "Bounce Online"));
+				message.Body = emailRequest.Body;
+
+				message.Subject = emailRequest.Subject;
+				if (emailRequest.Attachments.Count > 0)
+				{
+					foreach (var attachment in emailRequest.Attachments)
+					{
+						string fileName = Path.GetFileName(attachment.FileName);
+						message.Attachments.Add(new System.Net.Mail.Attachment(attachment.OpenReadStream(), fileName));
+					}
+				}
+
+				using var client = new SmtpClient(host: "smtp.sendgrid.net", port: 587);
+				client.Credentials = new NetworkCredential(
+					userName: "apikey",
+					password: key
+					);
+
+
+				await client.SendMailAsync(message);
+				return true;
+			}
+			catch (Exception ex)
+			{
+
+				var model = $"{JsonConvert.SerializeObject(emailRequest)}";
+				var message = $"{"internal server occured while sending email"}{" - "}{ex}{" - "}{model}{DateTime.Now}";
+
+				return false;
+			}
+		}
+
+
+
+		public static void SendSMS(string phoneNumber, string Message)
+		{
+
+
+			string accountSid = "AC91a3922ce1b0014ea218ad44aea261a2";
+			string authToken = "424474290bc86eaaf273a54f5d5edb4a\r\n";
+
+			TwilioClient.Init(accountSid, authToken);
+
+			var message = MessageResource.Create(
+				body: "Testing ",
+				from: new Twilio.Types.PhoneNumber("+447723487855"),
+				to: new Twilio.Types.PhoneNumber(phoneNumber)
+			);
+
+
+		}
+
+		public static string Base64Decode(string base64EncodedData)
+		{
+			var base64EncodedBytes = Convert.FromBase64String(base64EncodedData);
+			return Encoding.UTF8.GetString(base64EncodedBytes);
+
+		}
+
+		public static string Base64Encode(string plainText)
+		{
+			var plainTextBytes = Encoding.UTF8.GetBytes(plainText);
+			return Convert.ToBase64String(plainTextBytes);
+		}
 		public static async Task<T> ReadJosnAsync<T> ( string PhoneAbsolutePath) where T: class
 		{
 			//var PhoneAbsolutePath = Path.Combine(_hostingEnvironment.ContentRootPath, $"Static/{fileName}.json");
@@ -92,6 +173,20 @@ namespace DataMashUp.Utilities
 			return "";
 		}
 
+		public static string FormatConfirmEmailTemplate(string url, string rootPath, string userName)
+		{
+			string templateRootPath = CombinePath(rootPath, "confirmEmailTemplate.html");
+			string content = string.Empty;
+			using var sr = new StreamReader(templateRootPath);
+			content = sr.ReadToEnd();
+			content = content.Replace("{{userName}}", userName);
+			content = content.Replace("{{urlLink}}", url);
+			return content;
+		}
+		private static string CombinePath(string rootpath, string name)
+		{
+			return Path.Combine(rootpath, "Static", name);
+		}
 		public static List<T> PickRandomItems<T>(List<T> sourceList, int count)
 		{
 			if (count >= sourceList.Count)

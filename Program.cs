@@ -1,5 +1,7 @@
 using DataMashUp.Data;
+using DataMashUp.Middlewares;
 using DataMashUp.Repo;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -25,9 +27,25 @@ builder.Services.AddIdentity<IdentityUser<long>, IdentityRole<long>>(options =>
 	options.Password.RequiredLength = 6; // Modify password requirements as needed
 })
 .AddEntityFrameworkStores<ApplicationDbContext>()
-	   .AddDefaultTokenProviders();
+.AddDefaultTokenProviders()
+.AddSignInManager<SignInManager<IdentityUser<long>>>();
 
+builder.Services.AddAuthentication();
+builder.Services.AddAuthorization();
 
+//builder.Services.AddAuthentication("Cookies")
+//		.AddCookie("Cookies", options =>
+//		{
+//			options.LoginPath = "/Auth/Login"; // Set the login page route
+//		});
+
+//builder.Services.AddAuthorization(options =>
+//{
+//	options.AddPolicy("LoggedIn", policy =>
+//	{
+//		policy.RequireAuthenticatedUser();
+//	});
+//});
 
 
 var app = builder.Build();
@@ -47,6 +65,7 @@ app.UseRouting();
 app.UseAuthentication();
 
 app.UseAuthorization();
+//app.UseMiddleware<AuthorizeMiddleware>();
 
 app.MapControllerRoute(
     name: "default",

@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Template</title>
+    <style>
+        /* Reset some default styles */
+        body, p {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Set the background color and font styles */
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        /* Style the container */
+        .container {
+            background-color: #fff;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Style the header */
+        .header {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        /* Style the content */
+        .content {
+            padding: 20px;
+        }
+
+        /* Style the button */
+        .button {
+            display: inline-block;
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        /* Style the footer */
+        .footer {
+            background-color: #007BFF;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 style="color: white;">Welcome to Nutrition Advice</h1>
+        </div>
+        <div class="content">
+            <p>Hello {{userName}},</p>
+            <p>You have one step away</p>
+            <p>Kindly click the link below to confirm your account.</p>
+            <p>
+                <a href="{{urlLink}}" class="button">Click Here</a>
+            </p>
+        </div>
+        <div class="footer">
+            &copy; 2023 Your Company Name
+        </div>
+    </div>
+</body>
+</html>
