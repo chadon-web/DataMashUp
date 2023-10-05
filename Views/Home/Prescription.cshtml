@@ -12,66 +12,82 @@
 	<title>Diet Prescription</title>
 	<style>
 		body {
-			font-family: Arial, sans-serif;
-			margin: 20px;
-			background-color: #f2f2f2;
-		}
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f2f2f2;
+	width : 80%
+}
 
-		.prescription {
-			max-width: 600px;
-			margin: 0 auto;
-			border: 2px solid #333;
-			padding: 20px;
-			background-color: #fff;
-		}
+.prescription {
+    max-width: 600px;
+    margin: 0 auto;
+    border: 2px solid #333;
+    padding: 20px;
+    background-color: #fff;
+}
 
-		h1 {
-			text-align: center;
-			color: #007bff;
-		}
+h1 {
+    text-align: center;
+    color: #007bff;
+}
 
-		.patient-info {
-			margin-bottom: 20px;
-			padding: 10px;
-			background-color: #f7f7f7;
-		}
+.patient-info,
+.diet-instructions,
+.eat-section,
+.avoid-section {
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #f7f7f7;
+}
 
-		.diet-instructions {
-			margin-bottom: 20px;
-			padding: 10px;
-			background-color: #f7f7f7;
-		}
+h3 {
+    color: #007bff;
+}
 
-		.eat-section, .avoid-section {
-			margin-bottom: 20px;
-			padding: 10px;
-			background-color: #f7f7f7;
-		}
+ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    color: #333;
+}
 
-		h3 {
-			color: #007bff;
-		}
+.footer {
+    text-align: center;
+    margin-top: 20px;
+}
 
-		ul {
-			list-style-type: disc;
-			margin-left: 20px;
-			color: #333;
-		}
+button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
 
-		.footer {
-			text-align: center;
-			margin-top: 20px;
-		}
+table {
+    width: 100%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
 
-		button {
-			display: block;
-			margin: 20px auto;
-			padding: 10px 20px;
-			background-color: #007bff;
-			color: #fff;
-			border: none;
-			cursor: pointer;
-		}
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #3498db;
+    color: #fff;
+}
+
+tr:hover {
+    background-color: #f5f5f5;
+}
+
 
 	</style>
 </head>
@@ -79,32 +95,37 @@
 	<div class="prescription">
 		<h1>Diet Prescription</h1>
 		<div class="patient-info">
-			<p><strong>Patient Name:</strong> John Doe</p>
+			<p><strong>Patient Name:</strong> @Model.Name</p>
 			<p><strong>Age:</strong> @Model.Age</p>
 			<p><strong>Gender:</strong>@Model.Gender</p>
+				<p><strong>BMI:</strong>@Model.BMI</p>
 		</div>
 		<div class="diet-instructions">
 			<h2>Dietary Instructions:</h2>
-			<div class="eat-section">
-				<h3>What to Eat:</h3>
-				<ul>
-					@foreach (var item in Model.Consumes)
-					{
-						<li>@item.DisplayAs</li>
-					}
 
-				</ul>
-			</div>
-			<div class="avoid-section">
-				<h3>What to Avoid:</h3>
-				<ul>
-					@foreach (var item in Model.Avoids)
-					{
-						<li>@item.DisplayAs</li>
-					}
+			<table id="dynamic-table">
+			<thead>
+				<tr>
+					<th>Day</th>
+					<th>Breakfast</th>
+					<th>Lunch</th>
+					<th>Dinner</th>
+				</tr>
+			</thead>
+			<tbody>
+				@foreach(var item in Model.Diets)
+				{
+					<tr>
+						<td>@item.Day</td>
+						<td>@item.BreakFast</td>
+						<td>@item.Lunch</td>
+						<td>@item.Dinner</td>
+					</tr>
+				}
+			</tbody>
+			</table>
 
-				</ul>
-			</div>
+			
 			<div class="avoid-section">
 				<h3>Excercise Prescription:</h3>
 				<ul>
@@ -123,6 +144,7 @@
 	</div>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+	<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
 	<script>
 		// Get the current date and time
 		const currentDate = new Date();

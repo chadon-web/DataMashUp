@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using NuGet.Common;
+using System.Text;
 using System.Transactions;
 
 namespace DataMashUp.Controllers
@@ -34,6 +35,7 @@ namespace DataMashUp.Controllers
 			_hostingEnvironment = hostingEnvironment;
 			rootPath = _hostingEnvironment.ContentRootPath;
 		}
+
 
 		public async Task<IActionResult> Login(string returnUrl = null)
 		{
@@ -137,7 +139,12 @@ namespace DataMashUp.Controllers
 				var result = await _userManager.CreateAsync(user,register.Password);
 				if (!result.Succeeded)
 				{
-					ModelState.AddModelError("Email", "Invalid login attempt.");
+					var error = new StringBuilder();
+					foreach (var item in result.Errors)
+					{
+						error.Append(item.Description + ", ");
+					}
+					ModelState.AddModelError("Email", error.ToString());
 					return View();
 
 				}

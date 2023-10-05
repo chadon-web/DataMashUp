@@ -1,0 +1,750 @@
+{
+  "dietType": "LOW_CARB",
+  "weightGoal": 34,
+  "dietDuration": 7,
+  "dailyPlan": [
+    {
+      "meals": [
+        {
+          "type": "BREAKFAST",
+          "ingredients": [
+            {
+              "id": "616eca5e953bf31b472e0e58",
+              "name": "Mushroom, portabella",
+              "quantity": 300.0
+            },
+            {
+              "id": "616eca63953bf31b472e0e6a",
+              "name": "Tomatoes,grape, ripe",
+              "quantity": 80.0
+            },
+            {
+              "id": "616eca64953bf31b472e0e6f",
+              "name": "Egg, grade A, whole",
+              "quantity": 123.0
+            },
+            {
+              "id": "616eca7f953bf31b472e0ec9",
+              "name": "Olives, various",
+              "quantity": 27.0
+            }
+          ]
+        },
+        {
+          "type": "SNACK1",
+          "ingredients": [
+            {
+              "id": "616eca6d953bf31b472e0e90",
+              "name": "Pineapple, fresh",
+              "quantity": 81.0
+            },
+            {
+              "id": "616eca95953bf31b472e0f1a",
+              "name": "Seeds, Walnuts, raw",
+              "quantity": 10.0
+            }
+          ]
+        },
+        {
+          "type": "LUNCH",
+          "ingredients": [
+            {
+              "id": "616eca6d953bf31b472e0e90",
+              "name": "Pineapple, fresh",
+              "quantity": 81.0
+            },
+            {
+              "id": "616eca96953bf31b472e0f1c",
+              "name": "Cabbage, white",
+              "quantity": 171.0
+            },
+            {
+              "id": "616eca94953bf31b472e0f15",
+              "name": "Fish, Halibut Fillet",
+              "quantity": 201.0
+            },
+            {
+              "id": "616eca73953bf31b472e0ea2",
+              "name": "Oil, Grapeseed oil",
+              "quantity": 14.0
+            }
+          ]
+        },
+        {
+          "type": "SNACK2",
+          "ingredients": [
+            {
+              "id": "616f8f4f17631b48b113df27",
+              "name": "Cabbage, Napa cabbage",
+              "quantity": 224.0
+            },
+            {
+              "id": "616eca95953bf31b472e0f1a",
+              "name": "Seeds, Walnuts, raw",
+              "quantity": 9.0
+            }
+          ]
+        },
+        {
+          "type": "DINNER",
+          "ingredients": [
+            {
+              "id": "616eca93953bf31b472e0f14",
+              "name": "Tomatoes",
+              "quantity": 160.0
+            },
+            {
+              "id": "616eca59953bf31b472e0e46",
+              "name": "Beef, tenderloin, lean, trimmed to 0% fat",
+              "quantity": 149.0
+            },
+            {
+              "id": "616eca87953bf31b472e0ee6",
+              "name": "Seeds,Almonds, raw",
+              "quantity": 8.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "meals": [
+        {
+          "type": "BREAKFAST",
+          "ingredients": [
+            {
+              "id": "616eca74953bf31b472e0ea6",
+              "name": "Green bell pepper",
+              "quantity": 150.0
+            },
+            {
+              "id": "616eca5e953bf31b472e0e58",
+              "name": "Mushroom, portabella",
+              "quantity": 233.0
+            },
+            {
+              "id": "616eca8f953bf31b472e0f04",
+              "name": "Fish, Salmon, smoked fillets",
+              "quantity": 74.0
+            },
+            {
+              "id": "616eca7f953bf31b472e0ec9",
+              "name": "Olives, various",
+              "quantity": 32.0
+            }
+          ]
+        },
+        {
+          "type": "SNACK1",
+          "ingredients": [
+            {
+              "id": "616eca96953bf31b472e0f1d",
+              "name": "Grapefruit, white",
+              "quantity": 120.0
+            },
+            {
+              "id": "616eca95953bf31b472e0f1a",
+              "name": "Seeds, Walnuts, raw",
+              "quantity": 10.0
+            }
+          ]
+        },
+        {
+          "type": "LUNCH",
+          "ingredients": [
+            {
+              "id": "616eca78953bf31b472e0eb2",
+              "name": "Kiwi",
+              "quantity": 65.0
+            },
+            {
+              "id": "616eca7d953bf31b472e0ec2",
+              "name": "Garden salad blend ",
+              "quantity": 150.0
+            },
+            {
+              "id": "616f910a17631b48b113df29",
+              "name": "Bok choy",
+              "quantity": 263.0
+            },
+            {
+              "id": "616eca58953bf31b472e0e44",
+              "name": "Ground beef, 93% lean meat/7% fat, raw",
+              "quantity": 164.0
+            },
+            {
+              "id": "616eca7f953bf31b472e0ec9",
+              "name": "Olives, various",
+              "quantity": 27.0
+            }
+          ]
+        },
+        {
+          "type": "SNACK2",
+          "ingredients": [
+            {
+              "id": "616eca8c953bf31b472e0ef8",
+              "name": "Red pepper",
+              "quantity": 79.0
+            },
+            {
+              "id": "616eca95953bf31b472e0f1a",
+              "name": "Seeds, Walnuts, raw",
+              "quantity": 9.0
+            }
+          ]
+        },
+        {
+          "type": "DINNER",
+          "ingredients": [
+            {
+              "id": "616eca9a953bf31b472e0f27",
+              "name": "Zucchini",
+              "quantity": 235.0
+            },
+            {
+              "id": "616eca8f953bf31b472e0f04",
+              "name": "Fish, Salmon, smoked fillets",
+              "quantity": 112.0
+            },
+            {
+              "id": "616eca56953bf31b472e0e3e",
+              "name": "Avocado chunks",
+              "quantity": 41.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "meals": [
+        {
+          "type": "BREAKFAST",
+          "ingredients": [
+            {
+              "id": "616eca5e953bf31b472e0e58",
+              "name": "Mushroom, portabella",
+              "quantity": 300.0
+            },
+            {
+              "id": "616eca8a953bf31b472e0ef3",
+              "name": "Red bell pepper",
+              "quantity": 67.0
+            },
+            {
+              "id": "616fac7017631b48b113df2e",
+              "name": "Liquid egg whites",
+              "quantity": 165.0
+            },
+            {
+              "id": "616eca95953bf31b472e0f1a",
+              "name": "Seeds, Walnuts, raw",
+              "quantity": 17.0
+            }
+          ]
+        },
+        {
+          "type": "SNACK1",
+          "ingredients": [
+            {
+              "id": "616eca5b953bf31b472e0e4f",
+              "name": "Blackberries, raw",
+              "quantity": 102.0
+            },
+            {
+              "id": "616eca95953bf31b472e0f1a",
+              "name": "Seeds, Walnuts, raw",
+              "quantity": 10.0
+            }
+          ]
+        },
+        {
+          "type": "LUNCH",
+          "ingredients": [
+            {
+              "id": "616eca95953bf31b472e0f1b",
+              "name": "Watermelon",
+              "quantity": 128.0
+            },
+            {
+              "id": "616eca56953bf31b472e0e3b",
+              "name": "Mixed grilled vegetables",
+              "quantity": 108.0
+            },
+            {
+              "id": "616eca71953bf31b472e0e9c",
+              "name": "Shrimp tails, peeled, frozen",
+              "quantity": 213.0
+            },
+            {
+              "id": "616eca6b953bf31b472e0e88",
+              "name": "Oil, Extra virgin olive oil",
+              "quantity": 15.0
+            }
+          ]
+        },
+        {
+          "type": "SNACK2",
+          "ingredients": [
+            {
+              "id": "616eca74953bf31b472e0ea6",
+              "name": "Green bell pepper",
+              "quantity": 119.0
+            },
+            {
+              "id": "616eca6b953bf31b472e0e88",
+              "name": "Oil, Extra virgin olive oil",
+              "quantity": 7.0
+            }
+          ]
+        },
+        {
+          "type": "DINNER",
+          "ingredients": [
+            {
+              "id": "616eca86953bf31b472e0ee4",
+              "name": "Radishes",
+              "quantity": 200.0
+            },
+            {
+              "id": "616eca89953bf31b472e0ef0",
+              "name": "Fish, Mahi Mahi Fillet",
+              "quantity": 164.0
+            },
+            {
+              "id": "616eca87953bf31b472e0ee7",
+              "name": "Seeds, Brazil nuts, raw",
+              "quantity": 19.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "meals": [
+        {
+          "type": "BREAKFAST",
+          "ingredients": [
+            {
+              "id": "616eca68953bf31b472e0e7c",
+              "name": "Cucumbers",
+              "quantity": 150.0
+            },
+            {
+              "id": "616eca63953bf31b472e0e6a",
+              "name": "Tomatoes,grape, ripe",
+              "quantity": 195.0
+            },
+            {
+              "id": "616eca8f953bf31b472e0f05",
+              "name": "Fish, Tuna, smoked",
+              "quantity": 94.0
+            },
+            {
+              "id": "616eca95953bf31b472e0f1a",
+              "name": "Seeds, Walnuts, raw",
+              "quantity": 15.0
+            }
+          ]
+        },
+        {
+          "type": "SNACK1",
+          "ingredients": [
+            {
+              "id": "616eca86953bf31b472e0ee5",
+              "name": "Raspberries",
+              "quantity": 82.0
+            },
+            {
+              "id": "616eca95953bf31b472e0f1a",
+              "name": "Seeds, Walnuts, raw",
+              "quantity": 10.0
+            }
+          ]
+        },
+        {
+          "type": "LUNCH",
+          "ingredients": [
+            {
+              "id": "616eca78953bf31b472e0eb2",
+              "name": "Kiwi",
+              "quantity": 65.0
+            },
+            {
+              "id": "616eca60953bf31b472e0e60",
+              "name": "Chickpeas, canned",
+              "quantity": 61.0
+            },
+            {
+              "id": "616eca8f953bf31b472e0f04",
+              "name": "Fish, Salmon, smoked fillets",
+              "quantity": 112.0
+            },
+            {
+              "id": "616eca76953bf31b472e0eab",
+              "name": "Seeds, hemp seeds, raw",
+              "quantity": 17.0
+            }
+          ]
+        },
+        {
+          "type": "SNACK2",
+          "ingredients": [
+            {
+              "id": "616f8ee517631b48b113df26",
+              "name": "Romaine lettuce",
+              "quantity": 158.0
+            },
+            {
+              "id": "616eca6b953bf31b472e0e88",
+              "name": "Oil, Extra virgin olive oil",
+              "quantity": 7.0
+            }
+          ]
+        },
+        {
+          "type": "DINNER",
+          "ingredients": [
+            {
+              "id": "616f910a17631b48b113df29",
+              "name": "Bok choy",
+              "quantity": 340.0
+            },
+            {
+              "id": "616eca7a953bf31b472e0ebb",
+              "name": "Fish, Salmon, marinated fillet",
+              "quantity": 112.0
+            },
+            {
+              "id": "616eca95953bf31b472e0f1a",
+              "name": "Seeds, Walnuts, raw",
+              "quantity": 10.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "meals": [
+        {
+          "type": "BREAKFAST",
+          "ingredients": [
+            {
+              "id": "616eca8a953bf31b472e0ef3",
+              "name": "Red bell pepper",
+              "quantity": 200.0
+            },
+            {
+              "id": "616eca64953bf31b472e0e6f",
+              "name": "Egg, grade A, whole",
+              "quantity": 160.0
+            },
+            {
+              "id": "616eca93953bf31b472e0f13",
+              "name": "Milk alternatives, Tofu, firm",
+              "quantity": 41.0
+            }
+          ]
+        },
+        {
+          "type": "SNACK1",
+          "ingredients": [
+            {
+              "id": "616eca5b953bf31b472e0e50",
+              "name": "Blueberries, raw",
+              "quantity": 67.0
+            },
+            {
+              "id": "616eca95953bf31b472e0f1a",
+              "name": "Seeds, Walnuts, raw",
+              "quantity": 10.0
+            }
+          ]
+        },
+        {
+          "type": "LUNCH",
+          "ingredients": [
+            {
+              "id": "616eca81953bf31b472e0ed3",
+              "name": "Peaches",
+              "quantity": 103.0
+            },
+            {
+              "id": "616f8d3917631b48b113df24",
+              "name": "Asparagus",
+              "quantity": 244.0
+            },
+            {
+              "id": "616eca89953bf31b472e0ef0",
+              "name": "Fish, Mahi Mahi Fillet",
+              "quantity": 189.0
+            },
+            {
+              "id": "616eca7f953bf31b472e0ec9",
+              "name": "Olives, various",
+              "quantity": 45.0
+            },
+            {
+              "id": "616eca95953bf31b472e0f1a",
+              "name": "Seeds, Walnuts, raw",
+              "quantity": 9.0
+            }
+          ]
+        },
+        {
+          "type": "SNACK2",
+          "ingredients": [
+            {
+              "id": "616f8f4f17631b48b113df27",
+              "name": "Cabbage, Napa cabbage",
+              "quantity": 224.0
+            },
+            {
+              "id": "616eca6b953bf31b472e0e88",
+              "name": "Oil, Extra virgin olive oil",
+              "quantity": 7.0
+            }
+          ]
+        },
+        {
+          "type": "DINNER",
+          "ingredients": [
+            {
+              "id": "616eca86953bf31b472e0ee4",
+              "name": "Radishes",
+              "quantity": 200.0
+            },
+            {
+              "id": "616eca58953bf31b472e0e44",
+              "name": "Ground beef, 93% lean meat/7% fat, raw",
+              "quantity": 149.0
+            },
+            {
+              "id": "616eca87953bf31b472e0ee6",
+              "name": "Seeds,Almonds, raw",
+              "quantity": 8.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "meals": [
+        {
+          "type": "BREAKFAST",
+          "ingredients": [
+            {
+              "id": "616eca93953bf31b472e0f14",
+              "name": "Tomatoes",
+              "quantity": 200.0
+            },
+            {
+              "id": "616eca8c953bf31b472e0ef8",
+              "name": "Red pepper",
+              "quantity": 50.0
+            },
+            {
+              "id": "616eca8f953bf31b472e0f05",
+              "name": "Fish, Tuna, smoked",
+              "quantity": 99.0
+            },
+            {
+              "id": "616eca7f953bf31b472e0ec9",
+              "name": "Olives, various",
+              "quantity": 45.0
+            }
+          ]
+        },
+        {
+          "type": "SNACK1",
+          "ingredients": [
+            {
+              "id": "616eca6e953bf31b472e0e94",
+              "name": "Mixed berries, frozen",
+              "quantity": 97.0
+            },
+            {
+              "id": "616eca95953bf31b472e0f1a",
+              "name": "Seeds, Walnuts, raw",
+              "quantity": 10.0
+            }
+          ]
+        },
+        {
+          "type": "LUNCH",
+          "ingredients": [
+            {
+              "id": "616eca78953bf31b472e0eb2",
+              "name": "Kiwi",
+              "quantity": 65.0
+            },
+            {
+              "id": "616eca91953bf31b472e0f0c",
+              "name": "Spinach, frozen",
+              "quantity": 300.0
+            },
+            {
+              "id": "616eca6f953bf31b472e0e95",
+              "name": "Oven roasted seasoned vegetables, frozen",
+              "quantity": 129.0
+            },
+            {
+              "id": "616eca85953bf31b472e0ee0",
+              "name": "Pork, tenderloin",
+              "quantity": 120.0
+            },
+            {
+              "id": "616eca73953bf31b472e0ea2",
+              "name": "Oil, Grapeseed oil",
+              "quantity": 8.0
+            }
+          ]
+        },
+        {
+          "type": "SNACK2",
+          "ingredients": [
+            {
+              "id": "616eca93953bf31b472e0f14",
+              "name": "Tomatoes",
+              "quantity": 95.0
+            },
+            {
+              "id": "616eca7f953bf31b472e0ec9",
+              "name": "Olives, various",
+              "quantity": 32.0
+            }
+          ]
+        },
+        {
+          "type": "DINNER",
+          "ingredients": [
+            {
+              "id": "616eca5e953bf31b472e0e58",
+              "name": "Mushroom, portabella",
+              "quantity": 267.0
+            },
+            {
+              "id": "616eca8f953bf31b472e0f05",
+              "name": "Fish, Tuna, smoked",
+              "quantity": 102.0
+            },
+            {
+              "id": "616eca56953bf31b472e0e3e",
+              "name": "Avocado chunks",
+              "quantity": 89.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "meals": [
+        {
+          "type": "BREAKFAST",
+          "ingredients": [
+            {
+              "id": "616eca8a953bf31b472e0ef3",
+              "name": "Red bell pepper",
+              "quantity": 200.0
+            },
+            {
+              "id": "616eca8f953bf31b472e0f04",
+              "name": "Fish, Salmon, smoked fillets",
+              "quantity": 104.0
+            },
+            {
+              "id": "616eca82953bf31b472e0ed4",
+              "name": "Peanut butter, no added sugar",
+              "quantity": 7.0
+            }
+          ]
+        },
+        {
+          "type": "SNACK1",
+          "ingredients": [
+            {
+              "id": "616eca5b953bf31b472e0e50",
+              "name": "Blueberries, raw",
+              "quantity": 67.0
+            },
+            {
+              "id": "616eca95953bf31b472e0f1a",
+              "name": "Seeds, Walnuts, raw",
+              "quantity": 10.0
+            }
+          ]
+        },
+        {
+          "type": "LUNCH",
+          "ingredients": [
+            {
+              "id": "616eca82953bf31b472e0ed5",
+              "name": "Pears",
+              "quantity": 63.0
+            },
+            {
+              "id": "616eca96953bf31b472e0f1c",
+              "name": "Cabbage, white",
+              "quantity": 171.0
+            },
+            {
+              "id": "616eca94953bf31b472e0f15",
+              "name": "Fish, Halibut Fillet",
+              "quantity": 201.0
+            },
+            {
+              "id": "616eca6b953bf31b472e0e88",
+              "name": "Oil, Extra virgin olive oil",
+              "quantity": 14.0
+            }
+          ]
+        },
+        {
+          "type": "SNACK2",
+          "ingredients": [
+            {
+              "id": "616eca55953bf31b472e0e39",
+              "name": "Arugula",
+              "quantity": 62.0
+            },
+            {
+              "id": "616eca93953bf31b472e0f14",
+              "name": "Tomatoes",
+              "quantity": 50.0
+            },
+            {
+              "id": "616eca95953bf31b472e0f1a",
+              "name": "Seeds, Walnuts, raw",
+              "quantity": 9.0
+            }
+          ]
+        },
+        {
+          "type": "DINNER",
+          "ingredients": [
+            {
+              "id": "616eca7d953bf31b472e0ec2",
+              "name": "Garden salad blend ",
+              "quantity": 150.0
+            },
+            {
+              "id": "616eca62953bf31b472e0e67",
+              "name": "Celery sticks",
+              "quantity": 88.0
+            },
+            {
+              "id": "616eca87953bf31b472e0ee8",
+              "name": "Fish, Alaska Cod Fillet, raw",
+              "quantity": 163.0
+            },
+            {
+              "id": "616eca92953bf31b472e0f0e",
+              "name": "Oil,Vegetable oil",
+              "quantity": 13.0
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

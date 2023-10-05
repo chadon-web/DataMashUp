@@ -14,6 +14,9 @@ namespace DataMashUp.Data
 		public DbSet<UseProfile> tbl_UserProfile { get; set; }
 
 		public DbSet<PrescriptionRequest> tbl_Prescription { get; set; }
+		public DbSet<DespokeSettings> tbl_DespokeSettings { get; set; }
+
+		public DbSet<Request> tbl_Request { get; set; }
 	}
 
 

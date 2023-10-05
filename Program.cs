@@ -3,9 +3,11 @@ using DataMashUp.Middlewares;
 using DataMashUp.Repo;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -24,7 +26,9 @@ builder.Services.AddIdentity<IdentityUser<long>, IdentityRole<long>>(options =>
 	options.Password.RequireUppercase = false;
 	options.Password.RequireLowercase = false;
 	options.Password.RequireDigit = false;
-	options.Password.RequiredLength = 6; // Modify password requirements as needed
+	options.Password.RequireNonAlphanumeric = false;
+	options.Password.RequiredLength = 2;
+ // Modify password requirements as needed
 })
 .AddEntityFrameworkStores<ApplicationDbContext>()
 .AddDefaultTokenProviders()
@@ -32,6 +36,18 @@ builder.Services.AddIdentity<IdentityUser<long>, IdentityRole<long>>(options =>
 
 builder.Services.AddAuthentication();
 builder.Services.AddAuthorization();
+
+//Log.Logger = new LoggerConfiguration()
+//           .WriteTo.Console()
+//           .WriteTo.File("logs/log.txt", rollingInterval: RollingInterval.Day)
+//           .CreateLogger();
+
+//// Add Serilog to the logging pipeline
+//builder.Services.AddLogging(loggingBuilder =>
+//{
+//    loggingBuilder.AddSerilog();
+//});
+//builder.Services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
 
 //builder.Services.AddAuthentication("Cookies")
 //		.AddCookie("Cookies", options =>
@@ -63,9 +79,11 @@ app.UseStaticFiles();
 
 app.UseRouting();
 app.UseAuthentication();
+//app.UseSerilogRequestLogging();
 
 app.UseAuthorization();
 //app.UseMiddleware<AuthorizeMiddleware>();
+app.UseCustomExceptionMiddleware();
 
 app.MapControllerRoute(
     name: "default",
