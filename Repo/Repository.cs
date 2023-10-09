@@ -28,7 +28,6 @@ namespace DataMashUp.Repo
 			_context = context;
 			_signInManager = signInManager;
 			_userManager = userManager;
-
 			 configuration = new ConfigurationBuilder()
 			.AddJsonFile("appsettings.json") // Assuming your JSON configuration is in a file named appsettings.json
 			.Build();
@@ -47,10 +46,13 @@ namespace DataMashUp.Repo
 			try
 			{
 				SecureProtocol();
+
+
 				var client = new HttpClient();
-				var url = "https://newsapi.org/v2/top-headlines?country=gb&category=health&apiKey=713c275bb68d4d8d9ed13b5fc4ffe980";
+				var url = "https://newsapi.org/v2/top-headlines?apiKey=713c275bb68d4d8d9ed13b5fc4ffe980&country=gb&category=health";
 				var request = new HttpRequestMessage(HttpMethod.Get, url);
 				var response = await client.SendAsync(request);
+				response.EnsureSuccessStatusCode();
 
 				var result = new NewsApiResponse();
 				if (response.IsSuccessStatusCode)
@@ -86,17 +88,7 @@ namespace DataMashUp.Repo
 					result.Articles = result.Articles.Take(4).ToList();
 				}
 				return result;
-				//using (var fs = System.IO.File.OpenText(PhoneAbsolutePath))
-				//{
-				//	var result = JsonConvert.DeserializeObject<NewsApiResponse>(await fs.ReadToEndAsync());
-
-				//	if (result != null && result.Articles.Any())
-				//	{
-				//		result.Articles = result.Articles.Take(4).ToList();
-				//	}
-				//	return result;
-
-				//}
+				
 			}
 		}
 
@@ -104,7 +96,9 @@ namespace DataMashUp.Repo
 		{
 			
 			var age = DateTime.Now.Year - model.DOB.Year;
+			
 			var excerciseTask =  Task.Run(()=> GetExcercisePrescriptionByAge(age.ToString()));
+			
 
 			if (!_despokeSettings.UseTestkey)
 			{
@@ -122,18 +116,56 @@ namespace DataMashUp.Repo
 
 			 await Task.WhenAll(dietTask, excerciseTask);
 
+			var thingsToAvoid = new List<string>();
+			// if the user is biabetic
+			if (model.IsDiabetic == "True")
+			{
+				//fetching the items to avoid from API
+				thingsToAvoid = await GetConsumeOrAvoid("16", "avoid");
+
+				//checking if the API response is not null and ensuring that the current task has completed
+				if(thingsToAvoid != null && dietTask.IsCompleted)
+				{
+					var thingsToAvoid2 = new List<string>();
+					var listOfDiets = dietTask.Result;
+					foreach (var item in thingsToAvoid.ToList())
+					{
+						//spliting out the first value from what to avoid values eg spliting out Beerwurst out  Beerwurst beer salami
+						//string[] parts = item.Split(' ');
+						//string firstItem = parts[0].Trim();
+						//checking if the value has been mentioned or contained in the diet prescription, if the value has been mentioned in the diet prescription skip the item 
+						//else you include it on the list of items of what to avoid
+						if( !listOfDiets.ToList().Any(x=> x.BreakFast.Contains(item) || x.SNACK.Contains(item) || x.Dinner.Contains(item)))
+						{
+							thingsToAvoid2.Add(item);
+						}
+					}
+
+					// picking the random items
+					thingsToAvoid = AppUtility.PickRandomItems(thingsToAvoid2, 20);
+				}
+
+			}
+
+			// converted from string to float value
+			var bmi = double.Parse(model.BMI);
+			//projecting response back to the user
 			var result = new PrescriptionDto
 			{
 
+				// list of excersices
 				ExerciseRecommendation = excerciseTask.Result,
+
+				// list of diets
 				Diets = dietTask.Result,
 				Age = age,
 				Name = model.FullName,
 				Gender = model.Gender,
-				BMI = model.BMI,
+				Avoids = thingsToAvoid ?? new List<string>(),
+				BMI = bmi.ToString("F2") // formated BMI value to 2 significant figure,
 			};
 
-
+			// Saving request to database
 			var request = new Request
 			{
 				Weight = model.Weight,
@@ -166,11 +198,11 @@ namespace DataMashUp.Repo
 
 			return ageExcercise;
 		}
-		private async Task<List<FoodItemList>> GetConsumeOrAvoid(string healthConditionId, string consumeOrAvoid )
+		private async Task<List<string>> GetConsumeOrAvoid(string healthConditionId, string consumeOrAvoid )
 		{
 			SecureProtocol();
 			var client = new HttpClient();
-			string subscriptionID = "IRcrBIYWTuQXD_YMr9eCf";
+			string subscriptionID = _despokeSettings.Auxilary;
 			int healthConditionID = int.Parse(healthConditionId);
 			//string consumeOrAvoid = "consume";
 			int limit = 50;
@@ -186,22 +218,16 @@ namespace DataMashUp.Repo
 			{
 				var request = new HttpRequestMessage(HttpMethod.Get, url);
 				var response = await client.SendAsync(request);
-				string jsonObject = await response.Content.ReadAsStringAsync();
-				 //jsonObject = "{ Items : " + jsonObject +
-					//"" +
-					//"}";
+				string jsonObject = await response.Content.ReadAsStringAsync();			 
 				var todo  = JsonConvert.DeserializeObject<List<FoodItemList>>(jsonObject);
 
-				var PhoneAbsolutePath = Path.Combine(_hostingEnvironment.ContentRootPath, $"Static/{consumeOrAvoid}.json");
-				Task.Factory.StartNew(() => { AppUtility.WriteToJosn(healthConditionId, jsonObject); });
-
-				return todo;
+				return todo.Select(x=> x.Description).ToList();
 			}
 			catch (Exception ex)
 			{
-
+				return null;
 			}
-			return result;
+		
 
 		}
 
@@ -232,13 +258,11 @@ namespace DataMashUp.Repo
 		}
 
 
-
-
 		private string BuildMealString(DailyPlan item, string mealType)
 		{
 			var mealIngredients = item.Meals.FirstOrDefault(x => x.Type == mealType)?.Ingredients;
 			var mealStringBuilder = new StringBuilder();
-
+			
 			foreach (var ingredient in mealIngredients ?? Enumerable.Empty<Ingredient>())
 			{
 				mealStringBuilder.Append($"{ingredient.Name} (quantity: {ingredient.Quantity} g), ");
@@ -252,22 +276,23 @@ namespace DataMashUp.Repo
 		{
 			string newAPIKey = configuration["Settings:newAPIKey"];
 			string baseUrl = configuration["Settings:BespokeBaseUrl"];
-			string requestUri = configuration["Settings:nutritionRequestUrl"];
+			string requestUrl = configuration["Settings:nutritionRequestUrl"];
 			string testUser = _despokeSettings.UserKey;
 			string enableTestUser = configuration["Settings:enableTestUser"];
 
-			userId = requestUri;
 			var payload = new SetDietPreferenceDto();
 
+			// spliting the data using comma as it comes as a single from the razor View, this the data is converted to a list od string
 			var ids = preferences.Split(',').ToList();
 			foreach (var item in ids)
 			{
 				payload.ingredientIds.Add(item);
 			}
 
+			//Serializing and converting the object to reveiew 
 			var cont = JsonConvert.SerializeObject(payload);
 
-			var url = requestUri + testUser + "/ingredients/excluded";
+			var url = requestUrl + testUser + "/ingredients/excluded";
 			var client = new HttpClient();
 			var request = new HttpRequestMessage(HttpMethod.Put, url);
 			request.Headers.Add("accept-language", "en");
@@ -308,12 +333,10 @@ namespace DataMashUp.Repo
 
 		public async Task<List<Diet>> GetNuritionPlanFronBespok(IndexDTO dTO)
 		{
-
-			
-			string requestUri = configuration["Settings:nutritionRequestUrl"];
+		
+			string requestUrL = configuration["Settings:nutritionRequestUrl"];
 			string testUser = _despokeSettings.UserKey;
 			string enableTestUser = configuration["Settings:enableTestUser"] ;
-
 
 			var payload = new DietPlanDto
 			{
@@ -323,7 +346,7 @@ namespace DataMashUp.Repo
 			
 			var cont = JsonConvert.SerializeObject(payload);
 
-			var url = $"{requestUri}{testUser}/diet";
+			var url = $"{requestUrL}{testUser}/diet";
 			var client = new HttpClient();
 			var request = new HttpRequestMessage(HttpMethod.Put, url);
 			request.Headers.Add("accept-language", "en");
@@ -342,6 +365,7 @@ namespace DataMashUp.Repo
 				var diets = new List<Diet>();
 
 				var day = 0;
+
 				foreach (var item in result.DailyPlan)
 				{
 					day++;
@@ -371,7 +395,7 @@ namespace DataMashUp.Repo
 			var payload = new UserInfo
 			{
 				weight = double.Parse(dTO.Weight),
-				height = double.Parse(dTO.Height) * 100,
+				height = double.Parse(dTO.Height) * 100, // converting  weight from m to cm.
 				dateOfBirth = dTO.DOB,
 				sex = dTO.Gender,
 				activityLevel = dTO.ActivityLevel

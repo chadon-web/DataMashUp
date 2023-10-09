@@ -137,6 +137,26 @@ tr:hover {
 				</ul>
 			</div>
 		</div>
+		@if(Model.Avoids.Any())
+		{
+			<div class="diet-instructions">
+			<h2>Diabetic Instructions:</h2>
+			<div class="eat-section">
+				<h3>What to avoid:</h3>
+				<ul>
+					@foreach (var item in Model.Avoids)
+					{
+						<li>@item</li>
+					}
+
+				</ul>
+			</div>
+
+		</div>
+
+		}
+
+
 		<div class="footer">
 			<p id="date">Date: </p>
 		</div>
