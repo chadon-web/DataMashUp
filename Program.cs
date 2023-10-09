@@ -37,31 +37,6 @@ builder.Services.AddIdentity<IdentityUser<long>, IdentityRole<long>>(options =>
 builder.Services.AddAuthentication();
 builder.Services.AddAuthorization();
 
-//Log.Logger = new LoggerConfiguration()
-//           .WriteTo.Console()
-//           .WriteTo.File("logs/log.txt", rollingInterval: RollingInterval.Day)
-//           .CreateLogger();
-
-//// Add Serilog to the logging pipeline
-//builder.Services.AddLogging(loggingBuilder =>
-//{
-//    loggingBuilder.AddSerilog();
-//});
-//builder.Services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
-
-//builder.Services.AddAuthentication("Cookies")
-//		.AddCookie("Cookies", options =>
-//		{
-//			options.LoginPath = "/Auth/Login"; // Set the login page route
-//		});
-
-//builder.Services.AddAuthorization(options =>
-//{
-//	options.AddPolicy("LoggedIn", policy =>
-//	{
-//		policy.RequireAuthenticatedUser();
-//	});
-//});
 
 
 var app = builder.Build();

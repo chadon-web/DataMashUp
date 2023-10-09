@@ -40,19 +40,6 @@ namespace DataMashUp.Controllers
 		public async Task<IActionResult> Index()
 		{
 
-
-
-			//string accountSid = "AC91a3922ce1b0014ea218ad44aea261a2";
-			//string authToken = "424474290bc86eaaf273a54f5d5edb4a\r\n";
-
-			//TwilioClient.Init(accountSid, authToken);
-
-			//var message = MessageResource.Create(
-			//	body: "Testing ",
-			//	from: new Twilio.Types.PhoneNumber("+447723487855"),
-			//	to: new Twilio.Types.PhoneNumber("+447305718080")
-			//);
-
 			var ingredients = await _repository.GetIngredient();
 			var result = new List<GetIngredientDto>();
 
@@ -99,42 +86,11 @@ namespace DataMashUp.Controllers
 		[HttpPost]
 
 		public async Task<IActionResult> Prescription(IndexDTO viewModel)
-		{
-			var user = await _userManager.GetUserAsync(User);
-	
+		{	
 			var prescription = await _repository.GetPrescription(viewModel);
-			//prescription.Age = age;
-			//prescription.Gender = gender;
-
-			//var prep = new PrescriptionRequest
-			//{
-			//	UserId = user.Id,
-			//	Email = user.Email,
-
-			//}
-
+			
 			return View(prescription);
 		}
-
-		//[Authorize]
-		//public async Task<IActionResult> Prescription(string healthCondition, int age, string gender )
-		//{
-		//	var user = await _userManager.GetUserAsync(User);
-
-		//	var prescription = await _repository.GetPrescription(healthCondition, age.ToString());
-		//	prescription.Age = age;
-		//	prescription.Gender = gender;
-
-		//	//var prep = new PrescriptionRequest
-		//	//{
-		//	//	UserId = user.Id,
-		//	//	Email = user.Email,
-
-		//	//}
-
-		//	return View(prescription);
-		//}
-
 
 		public IActionResult Privacy()
 		{

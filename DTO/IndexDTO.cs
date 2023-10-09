@@ -26,6 +26,7 @@ namespace DataMashUp.DTO
 	
 		public string Height { get; set; } = "";
 		public string Weight { get; set; } = "";
+		public string IsDiabetic { get; set; } 
 
 		public string MBICondition { get; set; } = string.Empty;
 		public List<GetIngredientDto> Ingredients { get; set; }

@@ -29,17 +29,15 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-
-
-
 </head>
 
 <body>
+
 	<div id="booking" class="section">
 		<div class="section-center">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-3 col-md-push-5">
+					<div class="col-md-3 col-md-push-5" id="map">
 						<div class="booking-cta">
 							<h1>Right Diet</h1>
 							<p>
@@ -106,11 +104,11 @@
 
 										<select class="form-control" asp-for="ActivityLevel" required>
 											<option value="">Select Gender</option> <!-- Default option -->
-											<option value="MOSTLY_SEDENTARY">MOSTLY SEDENTARY</option>
-											<option value="SOMEWHAT_SEDENTARY">SOMEWHAT SEDENTARY</option>
-											<option value="SOMEWHAT_ACTIVE">SOMEWHAT ACTIVE</option>
-											<option value="MODERATELY ACTIVE">MODERATELY ACTIVE</option>
-											<option value="VERY_ACTIVE">VERY_ACTIVE</option>
+											<option value="MOSTLY_SEDENTARY"> <span style="font-size:x-small">mostly sedentary</span></option>
+											<option value="SOMEWHAT_SEDENTARY"><span style="font-size:x-small">somewhat sedentary</span></option>
+											<option value="SOMEWHAT_ACTIVE"><span style="font-size:x-small">somewhat active</span></option>
+											<option value="MODERATELY ACTIVE"> <span style="font-size:x-small">moderately active</span></option>
+											<option value="VERY_ACTIVE"> <span style="font-size:x-small">very active</span></option>
 
 
 										</select>
@@ -120,15 +118,15 @@
 								</div>
 								<div class="row">
 									
-									<div class="col-sm-4">
+									<div class="col-sm-6">
 										<div class="form-group">
 											
 											<span class="form-label">Height (m)</span>
-											<input asp-for="Height" id="height" class="form-control" type="number" step="any" required />
+											<input asp-for="Height" id="height" class="form-control" type="number" min="1" step="any" required />
 										@*	<span style="color:red" id="heightError" class="error-message form-label text-danger"></span>*@
 										</div>
 									</div>
-									<div class="col-sm-4">
+									<div class="col-sm-6">
 										<div class="form-group">
 											<span class="form-label">Weight <span style="font-size:x-small">(kg)</span></span>
 											<input id="weight" asp-for="Weight" type="number" class="form-control" min="1" step="any"  required />
@@ -136,7 +134,7 @@
 										
 										</div>
 									</div>
-									<div class="col-sm-4">
+									<div class="col-sm-6">
 										<div class="form-group">
 											<span class="form-label">BMI <span style="font-size:x-small"> (kg/m^2)</span></span>
 											<input asp-for="BMI" id="bmi" class="form-control" readonly  />
@@ -161,14 +159,29 @@
 																		<div class="col-sm-5">
 										<div class="form-group">
 											<span class="form-label">Weight Goal <span style="font-size:x-small"></span></span>
-											<input asp-for="WeightGoal" id="weightGoal" type="number" step="any"  class="form-control" required />
+											<input asp-for="WeightGoal" id="weightGoal" type="number"  step="any" min="1"  class="form-control" required />
 											<span id="weightGoalError" style="color: red;"></span>
 										</div>
 									</div>
 
-									<div class="col-sm-7">
+									<div class="col-sm-6">
+									<div class="form-group">
+										<span class="form-label">Diabetic</span>
+
+										<select class="form-control" asp-for="IsDiabetic" required>
+											<option value="">Select Diabetic status</option> <!-- Default option -->
+											<option value="True">True</option>
+											<option value="False">False</option>
+
+										</select>
+
+
+									</div>
+								</div>
+
+									<div class="col-sm-6">
 										<div class="form-group">
-										<span class="form-label">Diet Preference <span style="font-size:x-small"></span></span>
+										<span class="form-label"><span style="font-size:x-small">Diet Preference </span></span>
 
 										<div class="checkbox-dropdown dropup">
 											<button class="btn btn-secondary dropdown-toggle" type="button" id="checkboxDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -185,14 +198,14 @@
 												}
 											</div>
 										</div>
-									</div>
+										</div>
 									</div>
 
-									
-
+							
+								
 								</div>								
 								<div class="form-btn">
-									<button type="submit" class="submit-btn">Search</button>
+									<button type="submit" class="submit-btn">Prescribe diet</button>
 								@*	<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>*@
 
 								</div>
@@ -210,6 +223,7 @@
 	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 	<script>
     $(document).ready(function () {
+
         // Function to interpret BMI
         function interpretBMI(bmi) {
             if (bmi < 18.5) {
@@ -312,6 +326,8 @@
             // Log the selected values (for demonstration purposes)
             console.log(selectedValues);
         });
+
+
     });
 </script>
 

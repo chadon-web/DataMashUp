@@ -1,266 +1,176 @@
 {
   "status": "ok",
-  "totalResults": 70,
+  "totalResults": 38,
   "articles": [
     {
+      "title": "Amazon Prime Day for October 2023 is here: Shop these deals - USA TODAY",
+      "author": "Amritpal Kaur Sandhu-Longoria",
       "source": {
-        "id": "google-news",
-        "name": "Google News"
+        "id": "usa-today",
+        "name": "USA Today"
       },
-      "author": "BBC",
-      "title": "Covid boosters and flu jabs on offer to vulnerable - BBC",
-      "description": null,
-      "url": "https://news.google.com/rss/articles/CBMiNWh0dHBzOi8vd3d3LmJiYy5jb20vbmV3cy91ay1ub3J0aGVybi1pcmVsYW5kLTY2ODI1NTQ50gE5aHR0cHM6Ly93d3cuYmJjLmNvbS9uZXdzL3VrLW5vcnRoZXJuLWlyZWxhbmQtNjY4MjU1NDkuYW1w?oc=5",
-      "urlToImage": null,
-      "publishedAt": "2023-09-18T05:42:44Z",
-      "content": null
+      "publishedAt": "2023-10-08T08:42:18Z",
+      "url": "https://www.usatoday.com/story/money/2023/10/06/amazon-prime-day-2023-october-10-deals/71076778007/"
     },
     {
+      "title": "Israeli leader warns of ‘long war’ as it faces unprecedented hostage crisis following Hamas attack - CNN",
+      "author": "Hadas Gold, Shirin Faqiri, Helen Regan, Jessie Yeung",
       "source": {
-        "id": "google-news",
-        "name": "Google News"
+        "id": "cnn",
+        "name": "CNN"
       },
-      "author": "The Telegraph",
-      "title": "Three humans catch dog disease amid surge in infected imported pets - The Telegraph",
-      "description": null,
-      "url": "https://news.google.com/rss/articles/CBMiZWh0dHBzOi8vd3d3LnRlbGVncmFwaC5jby51ay9uZXdzLzIwMjMvMDkvMTgvYnJ1Y2VsbGEtaHVtYW5zLWNhdGNoLWluY3VyYWJsZS1iYWN0ZXJpYWwtaW5mZWN0aW9uLWRvZ3Mv0gEA?oc=5",
-      "urlToImage": null,
-      "publishedAt": "2023-09-18T05:30:00Z",
-      "content": null
+      "publishedAt": "2023-10-08T08:17:00Z",
+      "url": "https://www.cnn.com/2023/10/08/middleeast/israel-gaza-attack-hostages-response-intl-hnk/index.html"
     },
     {
+      "title": "College football Week 6 highlights - top plays games takeaways 2023 - ESPN - ESPN",
+      "author": "David Hale",
       "source": {
-        "id": "google-news",
-        "name": "Google News"
+        "id": "espn",
+        "name": "ESPN"
       },
-      "author": "BBC",
-      "title": "New diagnostic centres in Bath, Swindon and Salisbury to test patients 'sooner' - BBC",
-      "description": null,
-      "url": "https://news.google.com/rss/articles/CBMiN2h0dHBzOi8vd3d3LmJiYy5jby51ay9uZXdzL3VrLWVuZ2xhbmQtc29tZXJzZXQtNjY4MjE2ODPSATtodHRwczovL3d3dy5iYmMuY28udWsvbmV3cy91ay1lbmdsYW5kLXNvbWVyc2V0LTY2ODIxNjgzLmFtcA?oc=5",
-      "urlToImage": null,
-      "publishedAt": "2023-09-18T05:24:26Z",
-      "content": null
+      "publishedAt": "2023-10-08T06:35:00Z",
+      "url": "https://www.espn.com/college-football/story/_/page/gamedayfinal100723/college-football-week-6-highlights-top-plays-games-takeaways-2023"
     },
     {
-      "source": {
-        "id": "google-news",
-        "name": "Google News"
-      },
-      "author": "Stoke-on-Trent Live",
-      "title": "North Staffordshire dad's warning to all men after 'traumatic' cancer diagnosis - Stoke-on-Trent Live",
-      "description": null,
-      "url": "https://news.google.com/rss/articles/CBMiYWh0dHBzOi8vd3d3LnN0b2tlc2VudGluZWwuY28udWsvbmV3cy9zdG9rZS1vbi10cmVudC1uZXdzL2tpZHNncm92ZS1kYWRzLXdhcm5pbmctbWVuLWFmdGVyLTg3MzUyNjHSAQA?oc=5",
-      "urlToImage": null,
-      "publishedAt": "2023-09-18T05:00:00Z",
-      "content": null
-    },
-    {
-      "source": {
-        "id": "google-news",
-        "name": "Google News"
-      },
-      "author": "The Guardian",
-      "title": "'Forever chemical' exposure linked to higher cancer odds in women - The Guardian",
-      "description": null,
-      "url": "https://news.google.com/rss/articles/CBMiYGh0dHBzOi8vd3d3LnRoZWd1YXJkaWFuLmNvbS9lbnZpcm9ubWVudC8yMDIzL3NlcC8xOC9wZmFzLWZvcmV2ZXItY2hlbWljYWxzLWV4cG9zdXJlLWNhbmNlci13b21lbtIBAA?oc=5",
-      "urlToImage": null,
-      "publishedAt": "2023-09-18T04:01:00Z",
-      "content": null
-    },
-    {
-      "source": {
-        "id": "google-news",
-        "name": "Google News"
-      },
-      "author": "Kent Online",
-      "title": "Mum-of-four ‘fat-shamed’ by hospital staff before her tragic death - Kent Online",
-      "description": null,
-      "url": "https://news.google.com/rss/articles/CBMia2h0dHBzOi8vd3d3LmtlbnRvbmxpbmUuY28udWsvdGhhbmV0L25ld3MvbXVtLW9mLWZvdXItZmF0LXNoYW1lZC1ieS1ob3NwaXRhbC1zdGFmZi1iZWZvcmUtaGVyLXRyYWdpYy0yOTM0OTcv0gEA?oc=5",
-      "urlToImage": null,
-      "publishedAt": "2023-09-18T04:00:00Z",
-      "content": null
-    },
-    {
-      "source": {
-        "id": "google-news",
-        "name": "Google News"
-      },
-      "author": "Worcester News",
-      "title": "Sylvia Jordan, 91, of Rushwick, died from rare antibiotic reaction | Worcester News - Worcester News",
-      "description": null,
-      "url": "https://news.google.com/rss/articles/CBMiZmh0dHBzOi8vd3d3LndvcmNlc3Rlcm5ld3MuY28udWsvbmV3cy8yMzc5MjUzOS5zeWx2aWEtam9yZGFuLTkxLXJ1c2h3aWNrLWRpZWQtcmFyZS1hbnRpYmlvdGljLXJlYWN0aW9uL9IBAA?oc=5",
-      "urlToImage": null,
-      "publishedAt": "2023-09-18T04:00:00Z",
-      "content": null
-    },
-    {
-      "source": {
-        "id": "google-news",
-        "name": "Google News"
-      },
-      "author": "The Independent",
-      "title": "Man struck down by deadly auto-immune disease after dream Bali holiday - The Independent",
-      "description": null,
-      "url": "https://news.google.com/rss/articles/CBMiZ2h0dHBzOi8vd3d3LmluZGVwZW5kZW50LmNvLnVrL25ld3MvdWsvaG9tZS1uZXdzL2d1aWxsYW4tYmFycmUtc3luZHJvbWUtYmFsaS1ob2xpZGF5LWR1YmFpLWIyNDEzMzAyLmh0bWzSAQA?oc=5",
-      "urlToImage": null,
-      "publishedAt": "2023-09-18T03:09:47Z",
-      "content": null
-    },
-    {
+      "title": "Afghanistan earthquake: Hundreds feared dead in 6.3 quake - BBC.com",
+      "author": "https://www.facebook.com/bbcnews",
       "source": {
         "id": null,
-        "name": "[Removed]"
+        "name": "BBC News"
       },
+      "publishedAt": "2023-10-08T05:57:07Z",
+      "url": "https://www.bbc.com/news/world-asia-67039463"
+    },
+    {
+      "title": "US pro-Palestinian groups applaud Hamas terror onslaught, plan support rallies - The Times of Israel",
       "author": null,
-      "title": "[Removed]",
-      "description": "[Removed]",
-      "url": "https://removed.com",
-      "urlToImage": null,
-      "publishedAt": "1970-01-01T00:00:00Z",
-      "content": "[Removed]"
+      "source": {
+        "id": null,
+        "name": "The Times of Israel"
+      },
+      "publishedAt": "2023-10-08T05:14:04Z",
+      "url": "https://www.timesofisrael.com/us-pro-palestinian-groups-applaud-hamas-terror-onslaught-plan-support-rallies/"
     },
     {
+      "title": "Notre Dame's Loss to Louisville Raises Doubts on Marcus Freeman - Sports Illustrated",
+      "author": "Pat Forde",
       "source": {
-        "id": "google-news",
-        "name": "Google News"
+        "id": null,
+        "name": "Sports Illustrated"
       },
-      "author": "The Telegraph",
-      "title": "Women 'less likely than men to receive CPR in public' - The Telegraph",
-      "description": null,
-      "url": "https://news.google.com/rss/articles/CBMiZmh0dHBzOi8vd3d3LnRlbGVncmFwaC5jby51ay9uZXdzLzIwMjMvMDkvMTgvd29tZW4tbGVzcy1saWtlbHktdG8tcmVjZWl2ZS1jcHItaW4tcHVibGljLXN0dWR5LXN1Z2dlc3RzL9IBAA?oc=5",
-      "urlToImage": null,
-      "publishedAt": "2023-09-17T23:53:00Z",
-      "content": null
+      "publishedAt": "2023-10-08T05:11:51Z",
+      "url": "https://www.si.com/college/2023/10/08/notre-dame-loss-louisville-marcus-freeman-jeff-brohm"
     },
     {
+      "title": "Horoscope for Sunday, Oct. 8, 2023 - Chicago Sun-Times",
+      "author": "Georgia Nicols",
       "source": {
-        "id": "google-news",
-        "name": "Google News"
+        "id": null,
+        "name": "Suntimes.com"
       },
-      "author": "NHS England",
-      "title": "NHS England » NHS booking opens for life-saving Covid vaccinations - NHS England",
-      "description": null,
-      "url": "https://news.google.com/rss/articles/CBMiWGh0dHBzOi8vd3d3LmVuZ2xhbmQubmhzLnVrLzIwMjMvMDkvbmhzLWJvb2tpbmctb3BlbnMtZm9yLWxpZmUtc2F2aW5nLWNvdmlkLXZhY2NpbmF0aW9ucy_SAQA?oc=5",
-      "urlToImage": null,
-      "publishedAt": "2023-09-17T23:05:53Z",
-      "content": null
+      "publishedAt": "2023-10-08T05:01:44Z",
+      "url": "https://chicago.suntimes.com/2023/10/8/23902584/horoscopes-today-sunday-oct-8-2023"
     },
     {
+      "title": "Dodgers expect Clayton Kershaw to pitch again vs. D-backs despite 'embarrassing' start in NLDS Game 1 - CBS Sports",
+      "author": "",
       "source": {
-        "id": "google-news",
-        "name": "Google News"
+        "id": null,
+        "name": "CBS Sports"
       },
-      "author": "The Times",
-      "title": "Bring in Martha's Rule quickly, coroner urges after Strep A death - The Times",
-      "description": null,
-      "url": "https://news.google.com/rss/articles/CBMibGh0dHBzOi8vd3d3LnRoZXRpbWVzLmNvLnVrL2FydGljbGUvYnJpbmctaW4tbWFydGhhcy1ydWxlLXF1aWNrbHktY29yb25lci11cmdlcy1hZnRlci1zdHJlcC1hLWRlYXRoLTVocXpoZm5ietIBAA?oc=5",
-      "urlToImage": null,
-      "publishedAt": "2023-09-17T20:10:00Z",
-      "content": null
+      "publishedAt": "2023-10-08T04:59:00Z",
+      "url": "https://www.cbssports.com/mlb/news/dodgers-expect-clayton-kershaw-to-pitch-again-vs-d-backs-despite-embarrassing-start-in-nlds-game-1/"
     },
     {
+      "title": "No winner as Powerball jackpot soars to at least $1.55 billion - ABC News",
+      "author": "Nadine El-Bawab, Riley Hoffman, Jon Haworth",
       "source": {
-        "id": "google-news",
-        "name": "Google News"
+        "id": "abc-news",
+        "name": "ABC News"
       },
-      "author": "Big Think",
-      "title": "Scientists discover a new type of brain cell - Big Think",
-      "description": null,
-      "url": "https://news.google.com/rss/articles/CBMiPmh0dHBzOi8vYmlndGhpbmsuY29tL25ldXJvcHN5Y2gvbmV3LXR5cGUtYnJhaW4tY2VsbC1hc3Ryb2N5dGUv0gEA?oc=5",
-      "urlToImage": null,
-      "publishedAt": "2023-09-17T19:00:00Z",
-      "content": null
+      "publishedAt": "2023-10-08T04:30:00Z",
+      "url": "https://abcnews.go.com/US/14-billion-powerball-jackpot-prize-grabs/story?id=103807204"
     },
     {
+      "title": "John Cena & LA Knight vs. Jimmy Uso & Solo Sikoa: WWE Fastlane 2023 highlights - WWE",
+      "author": null,
       "source": {
-        "id": "google-news",
-        "name": "Google News"
+        "id": null,
+        "name": "YouTube"
       },
-      "author": "Express",
-      "title": "Mum puts on £4 second-hand Vinted shoes and falls ill hours afterwards with mystery rash - Express",
-      "description": null,
-      "url": "https://news.google.com/rss/articles/CBMiUGh0dHBzOi8vd3d3LmV4cHJlc3MuY28udWsvbmV3cy91ay8xODEzODY4L211bS1mYWxscy1pbGwtc2Vjb25kLWhhbmQtc2hvZXMtdmludGVk0gFUaHR0cHM6Ly93d3cuZXhwcmVzcy5jby51ay9uZXdzL3VrLzE4MTM4NjgvbXVtLWZhbGxzLWlsbC1zZWNvbmQtaGFuZC1zaG9lcy12aW50ZWQvYW1w?oc=5",
-      "urlToImage": null,
-      "publishedAt": "2023-09-17T18:57:00Z",
-      "content": null
+      "publishedAt": "2023-10-08T04:10:26Z",
+      "url": "https://www.youtube.com/watch?v=ViYJ48ghkms"
     },
     {
+      "title": "Biden cannot escape Trump's shadow in border crisis - BBC.com",
+      "author": "https://www.facebook.com/bbcnews",
       "source": {
-        "id": "google-news",
-        "name": "Google News"
+        "id": null,
+        "name": "BBC News"
       },
-      "author": "The Mirror",
-      "title": "Tilapia fish vibrio warning after mum loses all four limbs - key things to know - The Mirror",
-      "description": null,
-      "url": "https://news.google.com/rss/articles/CBMiUGh0dHBzOi8vd3d3Lm1pcnJvci5jby51ay9uZXdzL3VzLW5ld3MvdGlsYXBpYS1maXNoLXZpYnJpby13YXJuaW5nLWFmdGVyLTMwOTYzMDY10gFUaHR0cHM6Ly93d3cubWlycm9yLmNvLnVrL25ld3MvdXMtbmV3cy90aWxhcGlhLWZpc2gtdmlicmlvLXdhcm5pbmctYWZ0ZXItMzA5NjMwNjUuYW1w?oc=5",
-      "urlToImage": null,
-      "publishedAt": "2023-09-17T18:05:37Z",
-      "content": null
+      "publishedAt": "2023-10-08T03:13:19Z",
+      "url": "https://www.bbc.com/news/67033249"
     },
     {
+      "title": "Chemical additive ban targeting popular candies signed into California law - KTLA Los Angeles",
+      "author": "Vivian Chow",
       "source": {
-        "id": "google-news",
-        "name": "Google News"
+        "id": null,
+        "name": "KTLA Los Angeles"
       },
-      "author": "The Telegraph",
-      "title": "'I didn't think my snoring would lead to a stroke at 31' - The Telegraph",
-      "description": null,
-      "url": "https://news.google.com/rss/articles/CBMiVGh0dHBzOi8vd3d3LnRlbGVncmFwaC5jby51ay9oZWFsdGgtZml0bmVzcy9ib2R5L3Nub3Jpbmctc2xlZXAtYXBub2VhLXJpc2stb2Ytc3Ryb2tlL9IBAA?oc=5",
-      "urlToImage": null,
-      "publishedAt": "2023-09-17T17:00:00Z",
-      "content": null
+      "publishedAt": "2023-10-08T02:50:49Z",
+      "url": "https://ktla.com/news/local-news/chemical-additive-ban-targeting-popular-candies-signed-into-california-law/"
     },
     {
+      "title": "'Sister Wives' Star Christine Brown Marries David Woolley After Kody Brown Split - Entertainment Tonight",
+      "author": "Rachel Mcrady",
       "source": {
-        "id": "google-news",
-        "name": "Google News"
+        "id": null,
+        "name": "Entertainment Tonight"
       },
-      "author": "Manchester Evening News",
-      "title": "The four conditions night sweats could be a sign of - Manchester Evening News",
-      "description": null,
-      "url": "https://news.google.com/rss/articles/CBMiX2h0dHBzOi8vd3d3Lm1hbmNoZXN0ZXJldmVuaW5nbmV3cy5jby51ay9uZXdzL2hlYWx0aC9mb3VyLWNvbmRpdGlvbnMtbmlnaHQtc3dlYXRzLWNvdWxkLTI3NzIyMzcy0gFjaHR0cHM6Ly93d3cubWFuY2hlc3RlcmV2ZW5pbmduZXdzLmNvLnVrL25ld3MvaGVhbHRoL2ZvdXItY29uZGl0aW9ucy1uaWdodC1zd2VhdHMtY291bGQtMjc3MjIzNzIuYW1w?oc=5",
-      "urlToImage": null,
-      "publishedAt": "2023-09-17T15:18:08Z",
-      "content": null
+      "publishedAt": "2023-10-08T01:07:52Z",
+      "url": "https://www.etonline.com/sister-wives-star-christine-brown-marries-david-woolley-after-kody-brown-split-209686"
     },
     {
+      "title": "NFL Player Props: Expert Week 5 Bets on Christian Kirk, Jared Goff, Desmond Ridder, More - The Action Network",
+      "author": "Nick Giffen",
       "source": {
-        "id": "google-news",
-        "name": "Google News"
+        "id": null,
+        "name": "The Action Network"
       },
-      "author": "Daily Record",
-      "title": "Liver disease red flag symptoms including signs that can be spotted on your face - Daily Record",
-      "description": null,
-      "url": "https://news.google.com/rss/articles/CBMiUGh0dHBzOi8vd3d3LmRhaWx5cmVjb3JkLmNvLnVrL2xpZmVzdHlsZS9saXZlci1kaXNlYXNlLXJlZC1mbGFnLXN5bXB0b21zLTMwOTYxNTc00gFUaHR0cHM6Ly93d3cuZGFpbHlyZWNvcmQuY28udWsvbGlmZXN0eWxlL2xpdmVyLWRpc2Vhc2UtcmVkLWZsYWctc3ltcHRvbXMtMzA5NjE1NzQuYW1w?oc=5",
-      "urlToImage": null,
-      "publishedAt": "2023-09-17T14:08:36Z",
-      "content": null
+      "publishedAt": "2023-10-08T00:41:00Z",
+      "url": "https://www.actionnetwork.com/nfl/nfl-player-props-expert-week-5-bets-on-christian-kirk-jared-goff-desmond-ridder"
     },
     {
+      "title": "Travis Kelce Answers Questions About Rumored Relationship: ‘You’ve Got a Lot of People That Care About Taylor, and for Good Reason’ - Billboard",
+      "author": "Associated Press",
       "source": {
-        "id": "google-news",
-        "name": "Google News"
+        "id": null,
+        "name": "Billboard"
       },
-      "author": "The Sun",
-      "title": "The 3 things to do if you need to relieve constipation and poo instantly... - The Sun",
-      "description": null,
-      "url": "https://news.google.com/rss/articles/CBMiU2h0dHBzOi8vd3d3LnRoZXN1bi5jby51ay9oZWFsdGgvMjM5NTcwODIvdGhpbmdzLXJlbGlldmUtY29uc3RpcGF0aW9uLXBvby1pbnN0YW50bHkv0gFXaHR0cHM6Ly93d3cudGhlc3VuLmNvLnVrL2hlYWx0aC8yMzk1NzA4Mi90aGluZ3MtcmVsaWV2ZS1jb25zdGlwYXRpb24tcG9vLWluc3RhbnRseS9hbXAv?oc=5",
-      "urlToImage": null,
-      "publishedAt": "2023-09-17T14:00:00Z",
-      "content": null
+      "publishedAt": "2023-10-08T00:32:45Z",
+      "url": "https://www.billboard.com/music/music-news/travis-kelce-taylor-swift-questions-press-conference-1235436594/"
     },
     {
+      "title": "Iranian Nobel Peace Prize winner Narges Mohammadi, in prison for speaking up against human rights violations, has been a voice for women for almost two decades - The Conversation",
+      "author": "Pardis Mahdavi",
       "source": {
-        "id": "google-news",
-        "name": "Google News"
+        "id": null,
+        "name": "The Conversation Africa"
       },
-      "author": "The Mirror",
-      "title": "Pharmacist shares warning signs of two silent killers in your feet – how to spot them - The Mirror",
-      "description": null,
-      "url": "https://news.google.com/rss/articles/CBMiUWh0dHBzOi8vd3d3Lm1pcnJvci5jby51ay9uZXdzL2hlYWx0aC9waGFybWFjaXN0LXNoYXJlcy13YXJuaW5nLXNpZ25zLXR3by0zMDk2MTcwMtIBVWh0dHBzOi8vd3d3Lm1pcnJvci5jby51ay9uZXdzL2hlYWx0aC9waGFybWFjaXN0LXNoYXJlcy13YXJuaW5nLXNpZ25zLXR3by0zMDk2MTcwMi5hbXA?oc=5",
-      "urlToImage": null,
-      "publishedAt": "2023-09-17T13:24:01Z",
-      "content": null
+      "publishedAt": "2023-10-08T00:12:00Z",
+      "url": "https://theconversation.com/iranian-nobel-peace-prize-winner-narges-mohammadi-in-prison-for-speaking-up-against-human-rights-violations-has-been-a-voice-for-women-for-almost-two-decades-215227"
+    },
+    {
+      "title": "Hubble Sees a Mysterious Flash in Between Galaxies - Universe Today",
+      "author": "Matt Williams",
+      "source": {
+        "id": null,
+        "name": "Universe Today"
+      },
+      "publishedAt": "2023-10-07T22:30:06Z",
+      "url": "https://www.universetoday.com/163555/hubble-sees-a-mysterious-flash-in-between-galaxies/"
     }
   ]
 }

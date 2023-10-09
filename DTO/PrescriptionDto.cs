@@ -2,8 +2,9 @@
 {
 	public class PrescriptionDto
 	{
+		
 		public List<FoodItemList> Consumes { get; set; } = new List<FoodItemList>();
-		public List<FoodItemList> Avoids { get; set; } = new List<FoodItemList>();
+		public List<string> Avoids { get; set; } = new List<string>();
 		public List<Diet> Diets { get; set; } = new List<Diet>();
 		public int Age { get; set; }
 		public string BMI { get; set; } = string.Empty;
