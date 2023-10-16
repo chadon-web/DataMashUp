@@ -130,11 +130,7 @@ namespace DataMashUp.Repo
 					var listOfDiets = dietTask.Result;
 					foreach (var item in thingsToAvoid.ToList())
 					{
-						//spliting out the first value from what to avoid values eg spliting out Beerwurst out  Beerwurst beer salami
-						//string[] parts = item.Split(' ');
-						//string firstItem = parts[0].Trim();
-						//checking if the value has been mentioned or contained in the diet prescription, if the value has been mentioned in the diet prescription skip the item 
-						//else you include it on the list of items of what to avoid
+						//filter the items to ensure that ir doesn't exist in the existing prescription details
 						if( !listOfDiets.ToList().Any(x=> x.BreakFast.Contains(item) || x.SNACK.Contains(item) || x.Dinner.Contains(item)))
 						{
 							thingsToAvoid2.Add(item);
@@ -218,7 +214,9 @@ namespace DataMashUp.Repo
 			{
 				var request = new HttpRequestMessage(HttpMethod.Get, url);
 				var response = await client.SendAsync(request);
-				string jsonObject = await response.Content.ReadAsStringAsync();			 
+				string jsonObject = await response.Content.ReadAsStringAsync();	
+				
+				//converting the response back to an object/class
 				var todo  = JsonConvert.DeserializeObject<List<FoodItemList>>(jsonObject);
 
 				return todo.Select(x=> x.Description).ToList();
@@ -230,11 +228,22 @@ namespace DataMashUp.Repo
 		
 
 		}
+		public async Task<ICollection<Restaurant>> GetAllRestuarants(IndexDTO model)
+		{
+			var url = "https://wyre-data.p.rapidapi.com/restaurants/town/" + model.Location;
+			var client = new HttpClient();
+			var request = new HttpRequestMessage(HttpMethod.Get, url);
+			request.Headers.Add("X-RapidAPI-Key", "e292282797mshfbdbc252194f3dbp1f514ajsnc5c7c16331b2");
+			request.Headers.Add("X-RapidAPI-Host", "wyre-data.p.rapidapi.com");
+			var content = new StringContent("", null, "text/plain");
+			request.Content = content;
+			var response = await client.SendAsync(request);
+			response.EnsureSuccessStatusCode();
+			var obj = await response.Content.ReadAsStringAsync();
+			var result = JsonConvert.DeserializeObject<List<Restaurant>>(obj) ;
+			return result;
 
-
-
-
-		
+		}
 
 		public async Task<List<FoodCategory>> GetIngredient()
 		{
@@ -331,9 +340,11 @@ namespace DataMashUp.Repo
 			}
 		}
 
+		//Fetching the nutrition plan for 7 days based on the user details such as age,
+		//height, weight, gender, weight goal and diet preference
 		public async Task<List<Diet>> GetNuritionPlanFronBespok(IndexDTO dTO)
 		{
-		
+			
 			string requestUrL = configuration["Settings:nutritionRequestUrl"];
 			string testUser = _despokeSettings.UserKey;
 			string enableTestUser = configuration["Settings:enableTestUser"] ;

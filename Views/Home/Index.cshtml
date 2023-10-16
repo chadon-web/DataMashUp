@@ -13,7 +13,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-	<title>Booking Form HTML Template</title>
+	<title>Nutrition prescription website</title>
 
 	<!-- Google font -->
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
@@ -39,12 +39,26 @@
 				<div class="row">
 					<div class="col-md-3 col-md-push-5" id="map">
 						<div class="booking-cta">
-							<h1>Right Diet</h1>
-							<p>
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi facere, soluta magnam consectetur molestias itaque
-								ad sint fugit architecto incidunt iste culpa perspiciatis possimus voluptates aliquid consequuntur cumque quasi.
-								Perspiciatis.
-							</p>
+							<h4><span style="color:white">Find your nearest restaurant</span></h4>
+							<p id="demo"></p>
+							<form asp-action="GetAllRestaurant" asp-controller="Home">
+								<div class="form-group">
+
+										<select class="form-control" asp-for="Location" >
+											<option value="">Select City</option> <!-- Default option -->
+											@foreach(var citiy in Model.Locations.OrderBy(x=> x.Text))
+											{
+												<option value="@citiy.Value">@citiy.Text</option>
+											}
+										</select>							
+
+								</div>
+							
+									<div class="form-btn">
+									<button type="submit"  class="submit-btn">Search</button>
+								</div>
+							
+							</form>
 						</div>
 					</div>
 					<div class="col-md-4 col-md-push-5">
@@ -69,7 +83,6 @@
 											
 											<span class="form-label">Full Name</span>
 											<input asp-for="FullName"  class="form-control" type="text" required />
-										@*	<span style="color:red" id="heightError" class="error-message form-label text-danger"></span>*@
 										</div>
 									</div>
 
@@ -89,10 +102,7 @@
 											<option value="MALE">Male</option>
 											<option value="FEMALE">Female</option>
 
-											@*@foreach (var item in Model.Locations)
-											{
-											<option value="@item.Value">@item.Text</option>
-											}*@
+										
 										</select>
 
 										<span class="select-arrow"></span>
@@ -123,14 +133,12 @@
 											
 											<span class="form-label">Height (m)</span>
 											<input asp-for="Height" id="height" class="form-control" type="number" min="1" step="any" required />
-										@*	<span style="color:red" id="heightError" class="error-message form-label text-danger"></span>*@
-										</div>
+									</div>
 									</div>
 									<div class="col-sm-6">
 										<div class="form-group">
 											<span class="form-label">Weight <span style="font-size:x-small">(kg)</span></span>
 											<input id="weight" asp-for="Weight" type="number" class="form-control" min="1" step="any"  required />
-									@*		<span style="color:red" id="weightError" class="error-message form-label text-danger"></span>*@
 										
 										</div>
 									</div>
@@ -206,7 +214,6 @@
 								</div>								
 								<div class="form-btn">
 									<button type="submit" class="submit-btn">Prescribe diet</button>
-								@*	<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>*@
 
 								</div>
 							</form>
@@ -330,7 +337,27 @@
 
     });
 </script>
+@*<script>
+    function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+			console.log("");
+            document.getElementById("demo").innerHTML = "Geolocation is not supported by this browser.";
+        }
+    }
 
+    function showPosition(position) {
+        var latitude = position.coords.latitude;
+        var longitude = position.coords.longitude;
+        
+        // You can send the latitude and longitude to the server using AJAX or any preferred method.
+        // For simplicity, we'll display the coordinates on the page.
+        document.getElementById("demo").innerHTML = "Latitude: " + latitude + "<br>Longitude: " + longitude;
+		var doc = = "Latitude: " + latitude + "<br>Longitude: " + longitude;
+		console.log(doc);
+    }
+</script>*@
 
 </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 </html>

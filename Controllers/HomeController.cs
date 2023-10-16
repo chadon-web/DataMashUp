@@ -92,6 +92,17 @@ namespace DataMashUp.Controllers
 			return View(prescription);
 		}
 
+		[HttpPost]
+
+		public async Task<IActionResult> GetAllRestaurant (IndexDTO viewModel)
+		{
+			var restaurants = await _repository.GetAllRestuarants(viewModel);
+
+			return View(restaurants);
+		}
+
+
+	
 		public IActionResult Privacy()
 		{
 			return View();

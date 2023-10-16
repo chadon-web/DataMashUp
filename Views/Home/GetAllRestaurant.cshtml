@@ -1,0 +1,154 @@
+﻿
+@model ICollection<DataMashUp.DTO.Restaurant>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Diet Prescription</title>
+	<style>
+		body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f2f2f2;
+	width : 80%
+}
+
+.prescription {
+    max-width: 600px;
+    margin: 0 auto;
+    border: 2px solid #333;
+    padding: 20px;
+    background-color: #fff;
+}
+
+h1 {
+    text-align: center;
+    color: #007bff;
+}
+
+.patient-info,
+.diet-instructions,
+.eat-section,
+.avoid-section {
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #f7f7f7;
+}
+
+h3 {
+    color: #007bff;
+}
+
+ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    color: #333;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+table {
+    width: 100%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #3498db;
+    color: #fff;
+}
+
+tr:hover {
+    background-color: #f5f5f5;
+}
+
+
+	</style>
+</head>
+<body>
+	<div class="prescription">
+		<div class="diet-instructions">
+			<h2>Restaurants:</h2>
+
+			<table id="dynamic-table">
+			<thead>
+				<tr>
+					<th><strong>Name</strong></th>
+					<th>Address</th>
+
+				</tr>
+			</thead>
+			<tbody>
+				@if( Model.Any())
+				{
+					@foreach(var restaurant in Model.OrderBy(x=> x.BusinessName))
+				{
+					<tr>
+						<td><strong>@restaurant.BusinessName</strong><br></td>
+						<td>@restaurant.AddressLine2, @restaurant.AddressLine3 @restaurant.PostCode<br></td>
+
+					</tr>
+						}
+					}
+					else
+					{
+						<tr>
+						<td> <strong>No restaurant available</strong><br></td>
+
+					</tr>
+					}
+				</tbody>
+			</table>
+
+		</div>
+
+		<div class="footer">
+			<p id="date">Date: </p>
+		</div>
+		<button id="printButton">Print</button>
+	</div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+	<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+	<script>
+		// Get the current date and time
+		const currentDate = new Date();
+		const formattedDate = currentDate.toLocaleString();
+
+		// Update the date element with the current date and time
+		document.getElementById('date').textContent = `Date: ${formattedDate}`;
+
+		// Function to generate and save the PDF
+		document.getElementById('printButton').addEventListener('click', function() {
+						window.print();
+
+		});
+	</script>
+</body>
+</html>
