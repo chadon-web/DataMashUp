@@ -132,7 +132,13 @@
 .booking-form .submit-btn:focus {
 	opacity: 0.9;
 }
+.navbar {
+	margin-bottom: 20px; /* Add margin between navbar and content */
+}
 
+.section-center {
+	margin-top: 20px; /* Add margin between navbar and section-center */
+}
 .booking-cta {
 	margin-top: 80px;
 	margin-bottom: 30px;

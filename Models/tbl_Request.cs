@@ -6,6 +6,7 @@ namespace DataMashUp.Models
 	{
 		[Key]
 		public long Id { get; set; }
+		public DateTime? Date { get; set; }
 		public string FullName { get; set; }
 		public string ActivityLevel { get; set; } = string.Empty;
 		public int WeightGoal { get; set; }
@@ -24,6 +25,7 @@ namespace DataMashUp.Models
 		public string Height { get; set; } = "";
 		public string Weight { get; set; } = "";
 		public string DietRecomended { get; set; } = "";
+	
 
 
 	}

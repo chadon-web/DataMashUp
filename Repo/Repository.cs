@@ -178,6 +178,7 @@ namespace DataMashUp.Repo
 				Duration = 7,
 				DietRecomended = JsonConvert.SerializeObject(dietTask.Result),
 				ActivityLevel = model.ActivityLevel,
+				Date = DateTime.Now
 			};
 
 			_context.Add(request);
